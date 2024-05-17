@@ -1,16 +1,18 @@
 {
-  "name": "temp",
-  "version": "0.1.0",
+  "name": "socal-gd",
+  "version": "0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "prettier --write ."
+    "clean": "prettier --write .",
+    "prepare": "husky"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "7.9.0",
+    "husky": "9.0.11",
     "next": "14.2.3",
     "prettier": "3.2.5",
     "react": "18",
