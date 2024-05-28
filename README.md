@@ -4,7 +4,11 @@ This project was created to help unit the Google for Developer's communities pre
 
 # Tech Stack
 
-- TBD
+- Next.js
+- Firebase
+- Tailwind CSS
+- Gemini API
+- Google Maps API
 
 # Contributing
 
@@ -12,10 +16,6 @@ This project was created to help unit the Google for Developer's communities pre
 - Email [gdsccpp@gmail.com](mailto:gdsccpp@gmail.com)
 - DM [gdsccpp](https://www.instagram.com/gdsccpp/) on Instagram
 - DM `ttvbergie69` on Discord
-
-# Adding your GD group's information
-
-- TBD
 
 # Resources
 
