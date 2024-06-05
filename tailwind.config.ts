@@ -77,6 +77,12 @@ const config: Config = {
       "body-sm": "12px",
       caption: "10px",
     },
+    screens: {
+      sm: "360px",
+      md: "768px",
+      lg: "1280px",
+      xl: "1536px",
+    },
   },
   plugins: [],
 };
