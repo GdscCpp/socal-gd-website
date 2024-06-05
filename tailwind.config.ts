@@ -65,6 +65,18 @@ const config: Config = {
         },
       },
     },
+    fontSize: {
+      "heading-xl": "60px",
+      "heading-lg": "48px",
+      "heading-md": "34px",
+      "title-xl": "24px",
+      "title-lg": "20px",
+      "body-xl": "18px",
+      "body-lg": "16px",
+      "body-md": "14px",
+      "body-sm": "12px",
+      caption: "10px",
+    },
   },
   plugins: [],
 };
