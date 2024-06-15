@@ -1,6 +1,5 @@
 //TODO:
 //might need different bg color for disabled buttons
-//see if we can add a smoother transition between the shadows
 
 export enum BUTTON_VARIANTS {
   PRIMARY_LG = "bg-blue-500 text-white py-3 px-4 text-title-xl hover:shadow-blue-700 hover:bg-blue-600 active:bg-blue-500",
@@ -49,7 +48,7 @@ export default function Button({
         type={type}
         onClick={onClick}
         disabled={disabled}
-        className={`rounded
+        className={`rounded-lg
           transition
           duration-200
           ease-in-out
@@ -61,7 +60,9 @@ export default function Button({
           ${variant}
           select-none`}
       >
-        <div className="rounded bg-dark-400 py-3 px-4 select-none">{label}</div>
+        <div className="rounded-lg bg-dark-400 py-3 px-4 select-none">
+          {label}
+        </div>
       </button>
     );
   //solid button
@@ -71,7 +72,7 @@ export default function Button({
         type={type}
         onClick={onClick}
         disabled={disabled}
-        className={`rounded 
+        className={`rounded-lg 
           transition
           duration-200
           ease-in-out

@@ -19,7 +19,7 @@ export default function Page() {
         label="Test LG"
         type="button"
         disabled={false}
-        variant={BUTTON_VARIANTS.GRADIENT_1_LG}
+        variant={BUTTON_VARIANTS.SUCCESS_LG}
       />
       <div className="w-5" />
       <Button
