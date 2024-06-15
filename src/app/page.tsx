@@ -14,7 +14,19 @@ export default function Page() {
       <h1 className="text-heading-xl bg-2cg-4 text-transparent inline-block bg-clip-text">
         Hello, world!
       </h1>
-      <Button label="test" type="button" variant={BUTTON_VARIANTS.PRIMARY} />
+
+      <Button
+        label="Test LG"
+        type="button"
+        variant={BUTTON_VARIANTS.SUCCESS_LG}
+      />
+      <div className="w-5" />
+      <Button
+        label="Test SM"
+        type="button"
+        variant={BUTTON_VARIANTS.SUCCESS_SM}
+      />
+
       <Checkbox label="test" checked={true} onChange={() => {}} />
       <Input label="test" type="text" value="test" onChange={() => {}} />
       <Radio label="test" checked={true} onChange={() => {}} />
