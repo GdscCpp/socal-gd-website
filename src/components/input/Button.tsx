@@ -1,4 +1,6 @@
-//TODO: might need different bg color for disabled buttons
+//TODO:
+//might need different bg color for disabled buttons
+//see if we can add a smoother transition between the shadows
 
 export enum BUTTON_VARIANTS {
   PRIMARY_LG = "bg-blue-500 text-white py-3 px-4 text-title-xl hover:shadow-blue-700 hover:bg-blue-600 active:bg-blue-500",
@@ -9,10 +11,10 @@ export enum BUTTON_VARIANTS {
   SUCCESS_SM = "bg-success-200 text-white py-2.5 px-4 text-title-lg hover:shadow-success-400 hover:bg-success-300 active:bg-success-200",
   WARNING_LG = "bg-warning-200 text-black py-3 px-4 text-title-xl hover:shadow-warning-400 hover:bg-warning-300 active:bg-warning-200",
   WARNING_SM = "bg-warning-200 text-white py-2.5 px-4 text-title-lg hover:shadow-warning-400 hover:bg-warning-300 active:bg-warning-200",
-  GRADIENT_1_LG = "bg-4cg-2 text-white py-0.5 px-0.5 text-title-xl shadow-gradient-button-default shadow-green-500 hover:shadow-green-500 active:brightness-90",
-  GRADIENT_1_SM = "bg-4cg-2 text-white py-0.5 px-0.5 text-title-lg shadow-gradient-button-default shadow-green-500 hover:shadow-green-500 active:brightness-90",
-  GRADIENT_2_LG = "bg-4cg-1 text-white py-0.5 px-0.5 text-title-xl hover:shadow-yellow-500 active:opacity-90",
-  GRADIENT_2_SM = "bg-4cg-1 text-white py-0.5 px-0.5 text-title-lg hover:shadow-yellow-500 active:opacity-90",
+  GRADIENT_1_LG = "bg-4cg-2 text-white py-0.5 px-0.5 text-title-xl shadow-gradient-button-default shadow-green-500 hover:shadow-green-500 active:brightness-75",
+  GRADIENT_1_SM = "bg-4cg-2 text-white py-0.5 px-0.5 text-title-lg shadow-gradient-button-default shadow-green-500 hover:shadow-green-500 active:brightness-75",
+  GRADIENT_2_LG = "bg-4cg-1 text-white py-0.5 px-0.5 text-title-xl hover:shadow-yellow-500 active:opacity-75",
+  GRADIENT_2_SM = "bg-4cg-1 text-white py-0.5 px-0.5 text-title-lg hover:shadow-yellow-500 active:opacity-75",
 }
 
 // TODO: Add button variants
@@ -48,6 +50,9 @@ export default function Button({
         onClick={onClick}
         disabled={disabled}
         className={`rounded
+          transition
+          duration-200
+          ease-in-out
           hover:shadow-button-hover
           active:shadow-none
           disabled:shadow-none disabled:pointer-events-none disabled:opacity-30 
@@ -67,6 +72,9 @@ export default function Button({
         onClick={onClick}
         disabled={disabled}
         className={`rounded 
+          transition
+          duration-200
+          ease-in-out
           hover:shadow-button-hover
           active:shadow-button-clicked
           disabled:pointer-events-none disabled:bg-dark-400 disabled:opacity-40

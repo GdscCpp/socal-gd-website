@@ -19,14 +19,14 @@ export default function Page() {
         label="Test LG"
         type="button"
         disabled={false}
-        variant={BUTTON_VARIANTS.GRADIENT_2_LG}
+        variant={BUTTON_VARIANTS.GRADIENT_1_LG}
       />
       <div className="w-5" />
       <Button
         label="Test SM"
         type="button"
         disabled={false}
-        variant={BUTTON_VARIANTS.GRADIENT_1_SM}
+        variant={BUTTON_VARIANTS.GRADIENT_2_LG}
       />
 
       <Checkbox label="test" checked={true} onChange={() => {}} />
