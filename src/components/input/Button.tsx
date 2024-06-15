@@ -1,11 +1,10 @@
 //TODO:
 //Add disabled states (1/2 done)
-//Add GRADIENT_1 and GRADIENT_2 VARIANTS
 
 //TODO: might need different bg color for disabled buttons
 const DISABLED_STYLE_1 =
   "disabled:bg-dark-400 disabled:cursor-not-allowed disabled:opacity-40";
-const DISABLED_STYLE_2 = ""; //TODO: Add disabled style for gradient border buttons
+const DISABLED_STYLE_2 = "disabled:bg-grey-500 disabled:cursor-not-allowed"; //TODO: Add disabled style for gradient border buttons
 
 export enum BUTTON_VARIANTS {
   PRIMARY_LG = `${DISABLED_STYLE_1} bg-blue-500 text-white py-3 px-4 text-title-xl hover:shadow-blue-700 hover:bg-blue-600 active:bg-blue-500`,
@@ -16,11 +15,11 @@ export enum BUTTON_VARIANTS {
   SUCCESS_SM = `${DISABLED_STYLE_1} bg-success-200 text-white py-2.5 px-4 text-title-lg hover:shadow-success-400 hover:bg-success-300 active:bg-success-200`,
   WARNING_LG = `${DISABLED_STYLE_1} bg-warning-200 text-black py-3 px-4 text-title-xl hover:shadow-warning-400 hover:bg-warning-300 active:bg-warning-200`,
   WARNING_SM = `${DISABLED_STYLE_1} bg-warning-200 text-white py-2.5 px-4 text-title-lg hover:shadow-warning-400 hover:bg-warning-300 active:bg-warning-200`,
-  //TODO: Add gradient border buttons
-  GRADIENT_1_LG = "",
-  GRADIENT_1_SM = "",
-  GRADIENT_2_LG = "",
-  GRADIENT_2_SM = "",
+  //TODO: Add disabled states
+  GRADIENT_1_LG = "bg-4cg-2 text-white py-0.5 px-0.5 text-title-xl shadow-gradient-button-default shadow-green-500 hover:shadow-green-500 active:brightness-90",
+  GRADIENT_1_SM = "bg-4cg-2 text-white py-0.5 px-0.5 text-title-lg shadow-gradient-button-default shadow-green-500 hover:shadow-green-500 active:brightness-90",
+  GRADIENT_2_LG = `bg-4cg-1 text-white py-0.5 px-0.5 text-title-xl hover:shadow-yellow-500 active:opacity-90`,
+  GRADIENT_2_SM = "bg-4cg-1 text-white py-0.5 px-0.5 text-title-lg hover:shadow-yellow-500 active:opacity-90",
 }
 
 // TODO: Add button variants
@@ -43,17 +42,42 @@ export default function Button({
   className,
   variant,
 }: ButtonProps) {
-  return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      className={`rounded 
+  //gradient button //TODO:add disabled state
+  if (
+    variant == BUTTON_VARIANTS.GRADIENT_1_LG ||
+    variant == BUTTON_VARIANTS.GRADIENT_1_SM ||
+    variant == BUTTON_VARIANTS.GRADIENT_2_LG ||
+    variant == BUTTON_VARIANTS.GRADIENT_2_SM
+  )
+    return (
+      <div
+        className={`rounded ${className} ${variant}
+      ${disabled ? "" : "hover:shadow-button-hover"}
+      active:shadow-none`}
+      >
+        <button
+          type={type}
+          onClick={onClick}
+          disabled={disabled}
+          className="rounded bg-dark-400 py-3 px-4"
+        >
+          {label}
+        </button>
+      </div>
+    );
+  //solid button
+  else
+    return (
+      <button
+        type={type}
+        onClick={onClick}
+        disabled={disabled}
+        className={`rounded 
         ${disabled ? "" : "hover:shadow-button-hover active:shadow-button-clicked"} 
         ${className} 
         ${variant}`}
-    >
-      {label}
-    </button>
-  );
+      >
+        {label}
+      </button>
+    );
 }
