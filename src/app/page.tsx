@@ -10,7 +10,7 @@ import Textarea from "@/components/input/Textarea";
 
 export default function Page() {
   return (
-    <div className="text-white p-4 h-screen w-full flex items-center justify-center bg-white">
+    <div className="text-white p-4 h-screen w-full flex items-center justify-center bg-black">
       <h1 className="text-heading-xl bg-2cg-4 text-transparent inline-block bg-clip-text">
         Hello, world!
       </h1>
@@ -25,7 +25,8 @@ export default function Page() {
       <Button
         label="Test SM"
         type="button"
-        variant={BUTTON_VARIANTS.GRADIENT_2_SM}
+        disabled={false}
+        variant={BUTTON_VARIANTS.GRADIENT_1_SM}
       />
 
       <Checkbox label="test" checked={true} onChange={() => {}} />

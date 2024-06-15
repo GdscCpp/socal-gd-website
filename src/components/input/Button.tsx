@@ -1,24 +1,17 @@
-//TODO:
-//Add disabled states (1/2 done)
-
 //TODO: might need different bg color for disabled buttons
-const DISABLED_STYLE_1 =
-  "disabled:bg-dark-400 disabled:cursor-not-allowed disabled:opacity-40";
-const DISABLED_STYLE_2 = "disabled:bg-grey-500 disabled:cursor-not-allowed"; //TODO: Add disabled style for gradient border buttons
 
 export enum BUTTON_VARIANTS {
-  PRIMARY_LG = `${DISABLED_STYLE_1} bg-blue-500 text-white py-3 px-4 text-title-xl hover:shadow-blue-700 hover:bg-blue-600 active:bg-blue-500`,
-  PRIMARY_SM = `${DISABLED_STYLE_1} bg-blue-500 text-white py-2.5 px-4 text-title-lg hover:shadow-blue-700 hover:bg-blue-600 active:bg-blue-500`,
-  DANGER_LG = `${DISABLED_STYLE_1} bg-danger-200 text-white py-3 px-4 text-title-xl hover:shadow-danger-400 hover:bg-danger-300 active:bg-danger-200`,
-  DANGER_SM = `${DISABLED_STYLE_1} bg-danger-200 text-white py-2.5 px-4 text-title-lg hover:shadow-danger-400 hover:bg-danger-300 active:bg-danger-200`,
-  SUCCESS_LG = `${DISABLED_STYLE_1} bg-success-200 text-white py-3 px-4 text-title-xl hover:shadow-success-400 hover:bg-success-300 active:bg-success-200`,
-  SUCCESS_SM = `${DISABLED_STYLE_1} bg-success-200 text-white py-2.5 px-4 text-title-lg hover:shadow-success-400 hover:bg-success-300 active:bg-success-200`,
-  WARNING_LG = `${DISABLED_STYLE_1} bg-warning-200 text-black py-3 px-4 text-title-xl hover:shadow-warning-400 hover:bg-warning-300 active:bg-warning-200`,
-  WARNING_SM = `${DISABLED_STYLE_1} bg-warning-200 text-white py-2.5 px-4 text-title-lg hover:shadow-warning-400 hover:bg-warning-300 active:bg-warning-200`,
-  //TODO: Add disabled states
+  PRIMARY_LG = "bg-blue-500 text-white py-3 px-4 text-title-xl hover:shadow-blue-700 hover:bg-blue-600 active:bg-blue-500",
+  PRIMARY_SM = "bg-blue-500 text-white py-2.5 px-4 text-title-lg hover:shadow-blue-700 hover:bg-blue-600 active:bg-blue-500",
+  DANGER_LG = "bg-danger-200 text-white py-3 px-4 text-title-xl hover:shadow-danger-400 hover:bg-danger-300 active:bg-danger-200",
+  DANGER_SM = "bg-danger-200 text-white py-2.5 px-4 text-title-lg hover:shadow-danger-400 hover:bg-danger-300 active:bg-danger-200",
+  SUCCESS_LG = "bg-success-200 text-white py-3 px-4 text-title-xl hover:shadow-success-400 hover:bg-success-300 active:bg-success-200",
+  SUCCESS_SM = "bg-success-200 text-white py-2.5 px-4 text-title-lg hover:shadow-success-400 hover:bg-success-300 active:bg-success-200",
+  WARNING_LG = "bg-warning-200 text-black py-3 px-4 text-title-xl hover:shadow-warning-400 hover:bg-warning-300 active:bg-warning-200",
+  WARNING_SM = "bg-warning-200 text-white py-2.5 px-4 text-title-lg hover:shadow-warning-400 hover:bg-warning-300 active:bg-warning-200",
   GRADIENT_1_LG = "bg-4cg-2 text-white py-0.5 px-0.5 text-title-xl shadow-gradient-button-default shadow-green-500 hover:shadow-green-500 active:brightness-90",
   GRADIENT_1_SM = "bg-4cg-2 text-white py-0.5 px-0.5 text-title-lg shadow-gradient-button-default shadow-green-500 hover:shadow-green-500 active:brightness-90",
-  GRADIENT_2_LG = `bg-4cg-1 text-white py-0.5 px-0.5 text-title-xl hover:shadow-yellow-500 active:opacity-90`,
+  GRADIENT_2_LG = "bg-4cg-1 text-white py-0.5 px-0.5 text-title-xl hover:shadow-yellow-500 active:opacity-90",
   GRADIENT_2_SM = "bg-4cg-1 text-white py-0.5 px-0.5 text-title-lg hover:shadow-yellow-500 active:opacity-90",
 }
 
@@ -42,7 +35,7 @@ export default function Button({
   className,
   variant,
 }: ButtonProps) {
-  //gradient button //TODO:add disabled state
+  //gradient button
   if (
     variant == BUTTON_VARIANTS.GRADIENT_1_LG ||
     variant == BUTTON_VARIANTS.GRADIENT_1_SM ||
@@ -50,20 +43,21 @@ export default function Button({
     variant == BUTTON_VARIANTS.GRADIENT_2_SM
   )
     return (
-      <div
-        className={`rounded ${className} ${variant}
-      ${disabled ? "" : "hover:shadow-button-hover"}
-      active:shadow-none`}
+      <button
+        type={type}
+        onClick={onClick}
+        disabled={disabled}
+        className={`rounded
+          hover:shadow-button-hover
+          active:shadow-none
+          disabled:shadow-none disabled:pointer-events-none disabled:opacity-30 
+          disabled:bg-gradient-to-r disabled:from-white disabled:to-white
+          ${className}
+          ${variant}
+          select-none`}
       >
-        <button
-          type={type}
-          onClick={onClick}
-          disabled={disabled}
-          className="rounded bg-dark-400 py-3 px-4"
-        >
-          {label}
-        </button>
-      </div>
+        <div className="rounded bg-dark-400 py-3 px-4 select-none">{label}</div>
+      </button>
     );
   //solid button
   else
@@ -73,9 +67,12 @@ export default function Button({
         onClick={onClick}
         disabled={disabled}
         className={`rounded 
-        ${disabled ? "" : "hover:shadow-button-hover active:shadow-button-clicked"} 
-        ${className} 
-        ${variant}`}
+          hover:shadow-button-hover
+          active:shadow-button-clicked
+          disabled:pointer-events-none disabled:bg-dark-400 disabled:opacity-40
+          ${className} 
+          ${variant}
+          select-none`}
       >
         {label}
       </button>
