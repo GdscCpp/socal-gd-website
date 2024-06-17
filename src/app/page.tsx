@@ -31,8 +31,15 @@ export default function Page() {
 
       <Chip
         label="test"
+        variant={CHIP_VARIANTS.TRANSPARENT_LIGHT}
+        disabled={true}
+      />
+      <Chip label="test" variant={CHIP_VARIANTS.SOLID_LIGHT} disabled={true} />
+      <Chip label="test" variant={CHIP_VARIANTS.SOLID_DARK} disabled={true} />
+      <Chip
+        label="test"
         variant={CHIP_VARIANTS.TRANSPARENT_DARK}
-        disabled={false}
+        disabled={true}
       />
 
       <Tooltip label="test" />
