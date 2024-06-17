@@ -28,22 +28,26 @@ export default function Chip({
       ${disabled ? "bg-gray-400 opacity-95 pointer-events-none" : variant}
       ${className}`}
       >
-        <Image
-          src="icons/icons8-delete.svg"
-          alt="delete icon"
-          width="15"
-          height="15"
-          className="cursor-pointer mr-1.5 filter invert"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={15}
+          height={15}
+          viewBox="0 0 50 50"
+          className="mr-1.5 cursor-pointer fill-white"
           onClick={onDelete}
-        />
+        >
+          <path d="M7.719 6.281 6.28 7.72 23.563 25 6.28 42.281 7.72 43.72 25 26.437 42.281 43.72l1.438-1.438L26.437 25 43.72 7.719 42.28 6.28 25 23.563Z" />
+        </svg>
         {label}
-        <Image
-          src="icons/icons8-check.svg"
-          alt="check icon"
-          width="18"
-          height="15"
-          className="ml-1.5 filter invert"
-        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={18}
+          height={15}
+          viewBox="0 0 30 30"
+          className="ml-1.5 fill-white"
+        >
+          <path d="M26.98 5.99a1 1 0 0 0-.687.303L11 21.586l-6.293-6.293a1 1 0 1 0-1.414 1.414l7 7a1 1 0 0 0 1.414 0l16-16a1 1 0 0 0-.727-1.717z" />
+        </svg>
       </div>
     );
   //gradient chip
@@ -62,7 +66,7 @@ export default function Chip({
             width={15}
             height={15}
             viewBox="0 0 50 50"
-            className="mr-1.5 cursor-pointer fill-blue-500 dark:fill-green-500"
+            className={`mr-1.5 cursor-pointer ${disabled ? "fill-gray-400" : "fill-blue-500 dark:fill-green-500"}`}
             onClick={onDelete}
           >
             <path d="M7.719 6.281 6.28 7.72 23.563 25 6.28 42.281 7.72 43.72 25 26.437 42.281 43.72l1.438-1.438L26.437 25 43.72 7.719 42.28 6.28 25 23.563Z" />
@@ -73,7 +77,7 @@ export default function Chip({
             width={18}
             height={15}
             viewBox="0 0 30 30"
-            className="ml-1.5 fill-blue-500 dark:fill-green-500"
+            className={`ml-1.5 ${disabled ? "fill-gray-400" : "fill-blue-500 dark:fill-green-500"}`}
           >
             <path d="M26.98 5.99a1 1 0 0 0-.687.303L11 21.586l-6.293-6.293a1 1 0 1 0-1.414 1.414l7 7a1 1 0 0 0 1.414 0l16-16a1 1 0 0 0-.727-1.717z" />
           </svg>
