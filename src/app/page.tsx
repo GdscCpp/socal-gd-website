@@ -1,5 +1,5 @@
 import Avatar from "@/components/Avatar";
-import Chip from "@/components/Chip";
+import Chip, { CHIP_VARIANTS } from "@/components/Chip";
 import Tooltip from "@/components/Tooltip";
 import Button, { BUTTON_VARIANTS } from "@/components/input/Button";
 import Checkbox from "@/components/input/Checkbox";
@@ -21,13 +21,6 @@ export default function Page() {
         disabled={false}
         variant={BUTTON_VARIANTS.SUCCESS_LG}
       />
-      <div className="w-5" />
-      <Button
-        label="Test SM"
-        type="button"
-        disabled={false}
-        variant={BUTTON_VARIANTS.GRADIENT_2_LG}
-      />
 
       <Checkbox label="test" checked={true} onChange={() => {}} />
       <Input label="test" type="text" value="test" onChange={() => {}} />
@@ -35,7 +28,9 @@ export default function Page() {
       <Switch label="test" checked={true} onChange={() => {}} />
       <Textarea label="test" value="test" onChange={() => {}} />
       <Avatar src="https://avatars.githubusercontent.com/u/472312" alt="test" />
-      <Chip label="test" />
+
+      <Chip label="test" variant={CHIP_VARIANTS.SOLID_LIGHT} disabled={false} />
+
       <Tooltip label="test" />
     </div>
   );
