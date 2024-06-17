@@ -10,7 +10,7 @@ import Textarea from "@/components/input/Textarea";
 
 export default function Page() {
   return (
-    <div className="text-white p-4 h-screen w-full flex items-center justify-center bg-black">
+    <div className="text-white p-4 h-screen w-full flex items-center justify-center bg-white dark:bg-dark-400">
       <h1 className="text-heading-xl bg-2cg-4 text-transparent inline-block bg-clip-text">
         Hello, world!
       </h1>
@@ -29,18 +29,8 @@ export default function Page() {
       <Textarea label="test" value="test" onChange={() => {}} />
       <Avatar src="https://avatars.githubusercontent.com/u/472312" alt="test" />
 
-      <Chip
-        label="test"
-        variant={CHIP_VARIANTS.TRANSPARENT_LIGHT}
-        disabled={true}
-      />
-      <Chip label="test" variant={CHIP_VARIANTS.SOLID_LIGHT} disabled={true} />
-      <Chip label="test" variant={CHIP_VARIANTS.SOLID_DARK} disabled={true} />
-      <Chip
-        label="test"
-        variant={CHIP_VARIANTS.TRANSPARENT_DARK}
-        disabled={true}
-      />
+      <Chip label="test" variant={CHIP_VARIANTS.TRANSPARENT} />
+      <Chip label="test" variant={CHIP_VARIANTS.SOLID} />
 
       <Tooltip label="test" />
     </div>
