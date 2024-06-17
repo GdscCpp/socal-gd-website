@@ -29,7 +29,11 @@ export default function Page() {
       <Textarea label="test" value="test" onChange={() => {}} />
       <Avatar src="https://avatars.githubusercontent.com/u/472312" alt="test" />
 
-      <Chip label="test" variant={CHIP_VARIANTS.SOLID_LIGHT} disabled={false} />
+      <Chip
+        label="test"
+        variant={CHIP_VARIANTS.TRANSPARENT_DARK}
+        disabled={false}
+      />
 
       <Tooltip label="test" />
     </div>
