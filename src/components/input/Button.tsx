@@ -1,6 +1,3 @@
-//TODO:
-//might need different bg color for disabled buttons
-
 export enum BUTTON_VARIANTS {
   PRIMARY_LG = "bg-blue-500 text-white py-3 px-4 text-title-xl hover:shadow-blue-700 hover:bg-blue-600 active:bg-blue-500",
   PRIMARY_SM = "bg-blue-500 text-white py-2.5 px-4 text-title-lg hover:shadow-blue-700 hover:bg-blue-600 active:bg-blue-500",
@@ -15,9 +12,6 @@ export enum BUTTON_VARIANTS {
   GRADIENT_2_LG = "bg-4cg-1 text-white py-0.5 px-0.5 text-title-xl hover:shadow-yellow-500 active:opacity-75",
   GRADIENT_2_SM = "bg-4cg-1 text-white py-0.5 px-0.5 text-title-lg hover:shadow-yellow-500 active:opacity-75",
 }
-
-// TODO: Add button variants
-// ex PRIMARY = "primary classname",
 
 interface ButtonProps {
   label: string;
@@ -78,7 +72,7 @@ export default function Button({
           ease-in-out
           hover:shadow-button-hover
           active:shadow-button-clicked
-          disabled:pointer-events-none disabled:bg-dark-400 disabled:opacity-40
+          disabled:pointer-events-none disabled:bg-gray-700 disabled:opacity-40
           ${className} 
           ${variant}
           select-none`}

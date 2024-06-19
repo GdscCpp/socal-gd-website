@@ -7,7 +7,7 @@ interface ChipProps {
   label: string;
   onDelete?: () => void;
   className?: string;
-  variant: string;
+  variant: CHIP_VARIANTS;
   disabled?: boolean;
 }
 
