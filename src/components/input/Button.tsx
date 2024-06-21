@@ -37,14 +37,13 @@ export default function Button({
     variant == BUTTON_VARIANTS.GRADIENT_2_LG ||
     variant == BUTTON_VARIANTS.GRADIENT_2_SM;
 
-  //gradient button
-  if (isGradient)
-    return (
-      <button
-        type={type}
-        onClick={onClick}
-        disabled={disabled}
-        className={`rounded-lg
+  return isGradient ? (
+    //gradient button
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={`rounded-lg
           text-white
           px-0.5
           py-0.5
@@ -58,20 +57,18 @@ export default function Button({
           ${className}
           ${variant}
           select-none`}
-      >
-        <div className="rounded-lg bg-dark-400 py-3 px-4 select-none">
-          {label}
-        </div>
-      </button>
-    );
-  //solid button
-  else
-    return (
-      <button
-        type={type}
-        onClick={onClick}
-        disabled={disabled}
-        className={`rounded-lg 
+    >
+      <div className="rounded-lg bg-dark-400 py-3 px-4 select-none">
+        {label}
+      </div>
+    </button>
+  ) : (
+    //solid button
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={`rounded-lg 
           px-4
           transition
           duration-200
@@ -82,8 +79,8 @@ export default function Button({
           ${className} 
           ${variant}
           select-none`}
-      >
-        {label}
-      </button>
-    );
+    >
+      {label}
+    </button>
+  );
 }

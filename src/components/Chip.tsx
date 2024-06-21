@@ -21,50 +21,50 @@ export default function Chip({
   variant,
   disabled,
 }: ChipProps) {
-  //solid chip
-  if (variant === CHIP_VARIANTS.SOLID)
-    return (
+  //check if gradient chip
+  const isGradient = variant === CHIP_VARIANTS.TRANSPARENT;
+
+  //gradient chip
+  return isGradient ? (
+    <div
+      className={`px-0.5 py-0.5 rounded-full transition duration-200 ease-in-out ${className}
+      ${disabled ? "bg-gradient-to-r from-gray-400 to-gray-400 pointer-events-none text-gray-400" : variant}`}
+    >
       <div
-        className={`flex items-center text-body-lg text-white px-3 py-0.5 rounded-full transition duration-200 ease-in-out select-none
-      ${disabled ? "bg-gray-400 opacity-95 pointer-events-none" : variant}
-      ${className}`}
+        className={`flex items-center text-body-lg px-3 rounded-full select-none transition duration-200 ease-in-out
+          bg-white dark:bg-dark-400 hover:bg-blue-50 dark:hover:bg-green-950`}
       >
-        <CheckSvg width={12} height={12} fill="fill-white" className="mr-1.5" />
+        <CheckSvg
+          width={12}
+          height={12}
+          fill={`${disabled ? "fill-gray-400" : "fill-blue-500 dark:fill-green-500"}`}
+          className="mr-1.5"
+        />
         {label}
         <DeleteSvg
           width={12}
           height={12}
-          fill="fill-white"
+          fill={`${disabled ? "fill-gray-400" : "fill-blue-500 dark:fill-green-500"}`}
           className="ml-1.5 cursor-pointer"
+          onClick={onDelete}
         />
       </div>
-    );
-  //gradient chip
-  else
-    return (
-      <div
-        className={`px-0.5 py-0.5 rounded-full transition duration-200 ease-in-out ${className}
-        ${disabled ? "bg-gradient-to-r from-gray-400 to-gray-400 pointer-events-none text-gray-400" : variant}`}
-      >
-        <div
-          className={`flex items-center text-body-lg px-3 rounded-full select-none transition duration-200 ease-in-out
-          bg-white dark:bg-dark-400 hover:bg-blue-50 dark:hover:bg-green-950`}
-        >
-          <CheckSvg
-            width={12}
-            height={12}
-            fill={`${disabled ? "fill-gray-400" : "fill-blue-500 dark:fill-green-500"}`}
-            className="mr-1.5"
-          />
-          {label}
-          <DeleteSvg
-            width={12}
-            height={12}
-            fill={`${disabled ? "fill-gray-400" : "fill-blue-500 dark:fill-green-500"}`}
-            className="ml-1.5 cursor-pointer"
-            onClick={onDelete}
-          />
-        </div>
-      </div>
-    );
+    </div>
+  ) : (
+    //solid chip
+    <div
+      className={`flex items-center text-body-lg text-white px-3 py-0.5 rounded-full transition duration-200 ease-in-out select-none
+                  ${disabled ? "bg-gray-400 opacity-95 pointer-events-none" : variant}
+                  ${className}`}
+    >
+      <CheckSvg width={12} height={12} fill="fill-white" className="mr-1.5" />
+      {label}
+      <DeleteSvg
+        width={12}
+        height={12}
+        fill="fill-white"
+        className="ml-1.5 cursor-pointer"
+      />
+    </div>
+  );
 }
