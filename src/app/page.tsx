@@ -20,7 +20,6 @@ export default function Page() {
         <Button
           label="Test"
           type="button"
-          disabled={false}
           variant={BUTTON_VARIANTS.PRIMARY_LG}
         />
         <Button
@@ -34,7 +33,6 @@ export default function Page() {
         <Button
           label="Test"
           type="button"
-          disabled={false}
           variant={BUTTON_VARIANTS.SUCCESS_LG}
         />
         <Button
@@ -48,7 +46,6 @@ export default function Page() {
         <Button
           label="Test"
           type="button"
-          disabled={false}
           variant={BUTTON_VARIANTS.DANGER_LG}
         />
         <Button
@@ -62,7 +59,6 @@ export default function Page() {
         <Button
           label="Test"
           type="button"
-          disabled={false}
           variant={BUTTON_VARIANTS.WARNING_LG}
         />
         <Button
@@ -76,7 +72,6 @@ export default function Page() {
         <Button
           label="Test"
           type="button"
-          disabled={false}
           variant={BUTTON_VARIANTS.GRADIENT_1_LG}
         />
         <Button
@@ -90,7 +85,6 @@ export default function Page() {
         <Button
           label="Test"
           type="button"
-          disabled={false}
           variant={BUTTON_VARIANTS.GRADIENT_2_LG}
         />
         <Button
@@ -102,8 +96,8 @@ export default function Page() {
       </div>
 
       {/* showing all chips, delete later */}
-      <Chip label="test" variant={CHIP_VARIANTS.TRANSPARENT} disabled={false} />
-      <Chip label="test" variant={CHIP_VARIANTS.SOLID} disabled={false} />
+      <Chip label="test" variant={CHIP_VARIANTS.TRANSPARENT} />
+      <Chip label="test" variant={CHIP_VARIANTS.SOLID} />
       <Chip label="test" variant={CHIP_VARIANTS.TRANSPARENT} disabled={true} />
       <Chip label="test" variant={CHIP_VARIANTS.SOLID} disabled={true} />
 
