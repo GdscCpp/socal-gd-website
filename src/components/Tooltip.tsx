@@ -21,11 +21,12 @@ export default function Tooltip({ label, className }: TooltipProps) {
       </div>
       <div className="flex justify-between items-center mb-2">
         <h3 className="font-semibold">{label}</h3>
-        <button className="text-xl font-bold">&times;</button>
+        <button className="text-xl font-bold">×</button>
       </div>
       <p className="mb-2">Write tooltip description.</p>
       <div className="flex justify-between items-center">
         <div className="flex space-x-1">
+          {/* Temporary solution */}
           {Array(5)
             .fill(0)
             .map((_, i) => (

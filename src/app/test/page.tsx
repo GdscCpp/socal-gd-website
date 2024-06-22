@@ -1,3 +1,5 @@
+"use client";
+
 import Avatar from "@/components/Avatar";
 import Chip from "@/components/Chip";
 import Tooltip from "@/components/Tooltip";
