@@ -83,6 +83,12 @@ const config: Config = {
       lg: "1280px",
       xl: "1536px",
     },
+    boxShadow: {
+      "button-hover": "5px 5px 15px -2px rgb(0 0 0)",
+      "button-clicked": "inset 0px 10px 15px -10px rgba(0, 0, 0, 0.9)",
+      "gradient-button-default": "5px 7px 20px -4px rgb(0 0 0)",
+      none: "0px 0px 0px rbga(0,0,0,0)",
+    },
   },
   plugins: [],
 };
