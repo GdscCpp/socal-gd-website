@@ -16,7 +16,7 @@ export default function Page() {
       </h1>
 
       {/* just showing all the buttons here, delete later*/}
-      <div className="flex flex-col space-y-3 pr-3">
+      {/* <div className="flex flex-col space-y-3 pr-3">
         <Button
           label="Test"
           type="button"
@@ -93,10 +93,10 @@ export default function Page() {
           disabled={true}
           variant={BUTTON_VARIANTS.GRADIENT_2_LG}
         />
-      </div>
+      </div> */}
 
       {/* showing all chips, delete later */}
-      <Chip label="test" variant={CHIP_VARIANTS.TRANSPARENT} />
+      {/* <Chip label="test" variant={CHIP_VARIANTS.TRANSPARENT} />
       <Chip label="test" variant={CHIP_VARIANTS.SOLID} />
       <Chip label="test" variant={CHIP_VARIANTS.TRANSPARENT} disabled={true} />
       <Chip label="test" variant={CHIP_VARIANTS.SOLID} disabled={true} />
@@ -108,7 +108,7 @@ export default function Page() {
       <Textarea label="test" value="test" onChange={() => {}} />
       <Avatar src="https://avatars.githubusercontent.com/u/472312" alt="test" />
 
-      <Tooltip label="test" />
+      <Tooltip label="test" /> */}
     </div>
   );
 }
