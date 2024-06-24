@@ -7,13 +7,16 @@ import Input from "@/components/input/Input";
 import Radio from "@/components/input/Radio";
 import Switch from "@/components/input/Switch";
 import Textarea from "@/components/input/Textarea";
+import Tab from "@/components/Tab";
 
 export default function Page() {
   return (
     <div className="text-white p-4 h-screen w-full flex items-center justify-center bg-dark-400">
-      <h1 className="text-heading-xl bg-2cg-4 text-transparent inline-block bg-clip-text">
+      {/* <h1 className="text-heading-xl bg-2cg-4 text-transparent inline-block bg-clip-text">
         Hello, world!
-      </h1>
+      </h1> */}
+
+      <Tab text="This is a tab! :D" />
 
       {/* just showing all the buttons here, delete later*/}
       {/* <div className="flex flex-col space-y-3 pr-3">
