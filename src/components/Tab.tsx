@@ -1,6 +1,23 @@
-function Tab({ text }: { text: string }) {
+export enum orientation {
+  horizontal = "flex-row",
+  vertical = "flex-col",
+}
+
+interface TabProps {
+  text: string;
+  display: orientation;
+  className?: string;
+}
+
+function Tab({ text, display }: { text: string; display: orientation }) {
   return (
-    <button>{text}</button>
+    <button
+      className={`flex items-center content-center flex-wrap ${display} px-0.5 py-0.5text-body-lg p-4`}
+    >
+      <p>ICON</p>
+      {text}
+      {/* Default text is Tab, can be changed */}
+    </button>
 
     /*
         //////////////////////////////

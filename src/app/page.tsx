@@ -7,7 +7,7 @@ import Input from "@/components/input/Input";
 import Radio from "@/components/input/Radio";
 import Switch from "@/components/input/Switch";
 import Textarea from "@/components/input/Textarea";
-import Tab from "@/components/Tab";
+import Tab, { orientation, ORIENTATION } from "@/components/Tab";
 
 export default function Page() {
   return (
@@ -16,7 +16,11 @@ export default function Page() {
         Hello, world!
       </h1> */}
 
-      <Tab text="This is a tab! :D" />
+      <div className="flex flex-row space-x-3 pr-3">
+        <Tab text="Tab 1" display={orientation.horizontal} />
+
+        <Tab text="Tab 2" display={orientation.vertical} />
+      </div>
 
       {/* just showing all the buttons here, delete later*/}
       {/* <div className="flex flex-col space-y-3 pr-3">
@@ -102,9 +106,9 @@ export default function Page() {
       {/* <Chip label="test" variant={CHIP_VARIANTS.TRANSPARENT} />
       <Chip label="test" variant={CHIP_VARIANTS.SOLID} />
       <Chip label="test" variant={CHIP_VARIANTS.TRANSPARENT} disabled={true} />
-      <Chip label="test" variant={CHIP_VARIANTS.SOLID} disabled={true} />
+      <Chip label="test" variant={CHIP_VARIANTS.SOLID} disabled={true} /> */}
 
-      <Checkbox label="test" checked={true} onChange={() => {}} />
+      {/* <Checkbox label="test" checked={true} onChange={() => {}} />
       <Input label="test" type="text" value="test" onChange={() => {}} />
       <Radio label="test" checked={true} onChange={() => {}} />
       <Switch label="test" checked={true} onChange={() => {}} />
