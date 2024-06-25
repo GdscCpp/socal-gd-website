@@ -7,7 +7,7 @@ import Input from "@/components/input/Input";
 import Radio from "@/components/input/Radio";
 import Switch from "@/components/input/Switch";
 import Textarea from "@/components/input/Textarea";
-import Tab, { orientation, ORIENTATION } from "@/components/Tab";
+import Tab, { orientation } from "@/components/Tab";
 
 export default function Page() {
   return (

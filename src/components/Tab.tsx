@@ -6,7 +6,6 @@ export enum orientation {
 interface TabProps {
   text: string;
   display: orientation;
-  className?: string;
 }
 
 function Tab({ text, display }: { text: string; display: orientation }) {
@@ -16,7 +15,6 @@ function Tab({ text, display }: { text: string; display: orientation }) {
     >
       <p>ICON</p>
       {text}
-      {/* Default text is Tab, can be changed */}
     </button>
 
     /*
