@@ -11,9 +11,8 @@ interface TabProps {
 function Tab({ text, display }: { text: string; display: orientation }) {
   return (
     <button
-      className={`flex items-center content-center flex-wrap ${display} px-0.5 py-0.5text-body-lg p-4`}
+      className={`flex items-center content-center flex-wrap ${display} px-0.5 py-0.5 p-4 text-body-lg`}
     >
-      <p>ICON</p>
       {text}
     </button>
 
