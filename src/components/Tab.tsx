@@ -1,3 +1,5 @@
+import TabSvg from "./svgs/TabSvg";
+
 export enum orientation {
   horizontal = "flex-row",
   vertical = "flex-col",
@@ -6,38 +8,36 @@ export enum orientation {
 interface TabProps {
   text: string;
   display: orientation;
+  rounded: boolean;
 }
 
-function Tab({ text, display }: { text: string; display: orientation }) {
-  return (
+function Tab({ text, display, rounded }: TabProps) {
+  let borderRadius = "rounded";
+  return rounded ? (
+    // Rounded Tab Corners
     <button
-      className={`flex items-center content-center flex-wrap ${display} px-0.5 py-0.5 p-4 text-body-lg`}
+      className={`flex items-center content-center flex-wrap ${borderRadius} ${display} p-3 text-body-lg bg-blue-500`}
     >
-      {text}
+      <TabSvg width={14} height={14} display={display} fill="#fff" />
+      <p className="m-0">{text}</p>
     </button>
+  ) : (
+    // Sharp Tab Corners
+    <button
+      className={`flex items-center content-center flex-wrap ${display} p-3 text-body-lg bg-blue-500`}
+    >
+      <TabSvg width={14} height={14} display={display} fill="#fff" />
+      <p className="m-0">{text}</p>
+    </button>
+  );
+}
 
-    /*
+export default Tab;
+
+/*
         //////////////////////////////
         // GEN TAB STYLES REFERENCE //
         //////////////////////////////
-
-        >>> don't forget SVG import!
-
-        // TYPES //
-            > HORIZONTAL
-                width: 73
-                height 40
-                > IF ROUNDED:
-                    border-radius: 4
-                > ELSE:
-                    none
-            > VERTICAL
-                width: 53
-                height 60
-                > IF ROUNDED:
-                    border-radius: 4
-                > ELSE:
-                    none
 
         // COLORS //
             > LIGHT
@@ -60,7 +60,3 @@ function Tab({ text, display }: { text: string; display: orientation }) {
                 STYLE 7:| #5693FD [primary/Blue 500]              |  #FECB33 [secondary/Yellow]
 
         */
-  );
-}
-
-export default Tab;
