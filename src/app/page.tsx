@@ -16,11 +16,38 @@ export default function Page() {
         Hello, world!
       </h1> */}
 
+      {/* Default Tags */}
       <div className="flex flex-row space-x-3 pr-3">
+        <Tab
+          text="Tab"
+          display={orientation.horizontal}
+          rounded={true}
+          className="bg-blue-500"
+        />
+        <Tab
+          text="Tab"
+          display={orientation.horizontal}
+          rounded={false}
+          className="bg-blue-500"
+        />
+        <Tab
+          text="Tab"
+          display={orientation.vertical}
+          rounded={true}
+          className="bg-blue-500"
+        />
+        <Tab
+          text="Tab"
+          display={orientation.vertical}
+          rounded={false}
+          className="bg-blue-500"
+        />
+      </div>
+      {/* Creating a Nav Tag */}
+      <div className="flex items-center content-center text-body-lg bg-blue-500 rounded p-3">
         <Tab text="Tab" display={orientation.horizontal} rounded={true} />
-        <Tab text="Tab" display={orientation.horizontal} rounded={false} />
-        <Tab text="Tab" display={orientation.vertical} rounded={true} />
-        <Tab text="Tab" display={orientation.vertical} rounded={false} />
+        <Tab text="Tab" display={orientation.horizontal} rounded={true} />
+        <Tab text="Tab" display={orientation.horizontal} rounded={true} />
       </div>
 
       {/* just showing all the buttons here, delete later*/}
