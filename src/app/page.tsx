@@ -17,10 +17,10 @@ export default function Page() {
       </h1> */}
 
       <div className="flex flex-row space-x-3 pr-3">
-        <Tab text="Tab 1" display={orientation.horizontal} rounded={true} />
-        <Tab text="Tab 2" display={orientation.horizontal} rounded={false} />
-        <Tab text="Tab 3" display={orientation.vertical} rounded={true} />
-        <Tab text="Tab 4" display={orientation.vertical} rounded={false} />
+        <Tab text="Tab" display={orientation.horizontal} rounded={true} />
+        <Tab text="Tab" display={orientation.horizontal} rounded={false} />
+        <Tab text="Tab" display={orientation.vertical} rounded={true} />
+        <Tab text="Tab" display={orientation.vertical} rounded={false} />
       </div>
 
       {/* just showing all the buttons here, delete later*/}

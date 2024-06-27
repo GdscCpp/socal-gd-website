@@ -1,8 +1,8 @@
 import TabSvg from "./svgs/TabSvg";
 
 export enum orientation {
-  horizontal = "flex-row",
-  vertical = "flex-col",
+  horizontal = "flex-row px-3",
+  vertical = "flex-col p-3",
 }
 
 interface TabProps {
@@ -16,7 +16,7 @@ function Tab({ text, display, rounded }: TabProps) {
   return rounded ? (
     // Rounded Tab Corners
     <button
-      className={`flex items-center content-center flex-wrap ${borderRadius} ${display} p-3 text-body-lg bg-blue-500`}
+      className={`flex items-center content-center flex-wrap ${display} ${borderRadius} text-body-lg`}
     >
       <TabSvg width={14} height={14} display={display} fill="#fff" />
       <p className="m-0">{text}</p>
@@ -24,7 +24,7 @@ function Tab({ text, display, rounded }: TabProps) {
   ) : (
     // Sharp Tab Corners
     <button
-      className={`flex items-center content-center flex-wrap ${display} p-3 text-body-lg bg-blue-500`}
+      className={`flex items-center content-center flex-wrap ${display} text-body-lg`}
     >
       <TabSvg width={14} height={14} display={display} fill="#fff" />
       <p className="m-0">{text}</p>
