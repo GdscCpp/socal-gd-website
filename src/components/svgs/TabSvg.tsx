@@ -18,6 +18,8 @@ const TabSvg = ({ width, height, display, className, fill }: TabSvgProps) => {
       className={display === orientation.horizontal ? "mr-2" : "mb-2"}
       viewBox="0 0 14 14"
     >
+      {/* Can change to any other SVG paths, rect, lines, etc as needed */}
+      {/* Just be sure to include the fill property for its color */}
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
