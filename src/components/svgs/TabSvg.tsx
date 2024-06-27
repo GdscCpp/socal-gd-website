@@ -4,7 +4,7 @@ import Tab, { orientation } from "@/components/Tab";
 interface TabSvgProps {
   width: number;
   height: number;
-  display: orientation;
+  display?: orientation;
   className?: string;
   fill: string;
 }
