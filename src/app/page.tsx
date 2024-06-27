@@ -44,12 +44,75 @@ export default function Page() {
         />
       </div>
       {/* Creating a Nav Tag */}
-      <div className="flex items-center content-center text-body-lg bg-blue-500 rounded p-3">
-        <Tab text="Tab" display={orientation.horizontal} rounded={true} />
-        <Tab text="Tab" display={orientation.horizontal} rounded={true} />
-        <Tab text="Tab" display={orientation.horizontal} rounded={true} />
-      </div>
+      <div className="flex flex-col space-y-3 pr-3">
+        <div className="flex items-center content-center text-body-lg bg-blue-500 rounded px-5">
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            className="pr-10"
+          />
+          <Tab text="Tab" display={orientation.horizontal} rounded={true} />
+        </div>
 
+        <div className="flex items-center content-center text-body-lg rounded">
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            className="pr-10"
+          />
+          <Tab text="Tab" display={orientation.horizontal} rounded={true} />
+        </div>
+      </div>
       {/* just showing all the buttons here, delete later*/}
       {/* <div className="flex flex-col space-y-3 pr-3">
         <Button

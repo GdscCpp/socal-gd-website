@@ -1,7 +1,7 @@
 import TabSvg from "./svgs/TabSvg";
 
 export enum orientation {
-  horizontal = "flex-row px-3",
+  horizontal = "flex-row p-3",
   vertical = "flex-col p-3",
 }
 
@@ -16,20 +16,24 @@ function Tab({ text, className, display, rounded }: TabProps) {
   let borderRadius = "rounded";
   return rounded ? (
     // Rounded Tab Corners
-    <button
-      className={`flex items-center content-center ${display} ${borderRadius} text-body-lg ${className}`}
-    >
-      <TabSvg width={14} height={14} display={display} fill="#fff" />
-      <p className="m-0">{text}</p>
-    </button>
+    <div>
+      <button
+        className={`flex ${display} items-center ${borderRadius} text-body-lg ${className}`}
+      >
+        <TabSvg width={14} height={14} display={display} fill="#fff" />
+        <p className="m-0">{text}</p>
+      </button>
+    </div>
   ) : (
     // Sharp Tab Corners
-    <button
-      className={`flex items-center content-center ${display} text-body-lg ${className}`}
-    >
-      <TabSvg width={14} height={14} display={display} fill="#fff" />
-      <p className="m-0">{text}</p>
-    </button>
+    <div>
+      <button
+        className={`flex ${display} items-center text-body-lg ${className}`}
+      >
+        <TabSvg width={14} height={14} display={display} fill="#fff" />
+        <p className="m-0">{text}</p>
+      </button>
+    </div>
   );
 }
 
