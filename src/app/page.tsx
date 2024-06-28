@@ -16,103 +16,384 @@ export default function Page() {
         Hello, world!
       </h1> */}
 
-      {/* Default Tags */}
-      <div className="flex flex-row space-x-3 pr-3">
-        <Tab
-          text="Tab"
-          display={orientation.horizontal}
-          rounded={true}
-          className="bg-blue-500"
-        />
-        <Tab
-          text="Tab"
-          display={orientation.horizontal}
-          rounded={false}
-          className="bg-blue-500"
-        />
-        <Tab
-          text="Tab"
-          display={orientation.vertical}
-          rounded={true}
-          className="bg-blue-500"
-        />
-        <Tab
-          text="Tab"
-          display={orientation.vertical}
-          rounded={false}
-          className="bg-blue-500"
-        />
-      </div>
-      {/* Creating a Nav Tag */}
-      <div className="flex flex-col space-y-3 pr-3">
-        <div className="flex items-center content-center text-body-lg bg-blue-500 rounded px-5">
+      {/* DIV oF TABS */}
+      <div className="flex flex-col items-center space-y-3">
+        {/* DEFAULT TABS */}
+        <div className="flex flex-row space-x-3 pr-3">
           <Tab
             text="Tab"
             display={orientation.horizontal}
+            style="LIGHT_01"
             rounded={true}
-            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.vertical}
+            style="LIGHT_01"
+            rounded={true}
           />
           <Tab
             text="Tab"
             display={orientation.horizontal}
+            style="LIGHT_02"
             rounded={true}
-            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.vertical}
+            style="LIGHT_02"
+            rounded={true}
           />
           <Tab
             text="Tab"
             display={orientation.horizontal}
+            style="LIGHT_03"
             rounded={true}
-            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.vertical}
+            style="LIGHT_03"
+            rounded={true}
           />
           <Tab
             text="Tab"
             display={orientation.horizontal}
+            style="LIGHT_04"
             rounded={true}
-            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.vertical}
+            style="LIGHT_04"
+            rounded={true}
           />
           <Tab
             text="Tab"
             display={orientation.horizontal}
+            style="LIGHT_05"
             rounded={true}
-            className="pr-10"
           />
-          <Tab text="Tab" display={orientation.horizontal} rounded={true} />
+          <Tab
+            text="Tab"
+            display={orientation.vertical}
+            style="LIGHT_05"
+            rounded={true}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            style="LIGHT_06"
+            rounded={true}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.vertical}
+            style="LIGHT_06"
+            rounded={true}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            style="DARK_07"
+            rounded={true}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.vertical}
+            style="DARK_07"
+            rounded={true}
+          />
         </div>
+        <div className="flex flex-row space-x-3 pr-3">
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            style="DARK_01"
+            rounded={false}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.vertical}
+            style="DARK_01"
+            rounded={false}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            style="DARK_02"
+            rounded={false}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.vertical}
+            style="DARK_02"
+            rounded={false}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            style="DARK_03"
+            rounded={false}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.vertical}
+            style="DARK_03"
+            rounded={false}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            style="DARK_04"
+            rounded={false}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.vertical}
+            style="DARK_04"
+            rounded={false}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            style="DARK_05"
+            rounded={false}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.vertical}
+            style="DARK_05"
+            rounded={false}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            style="DARK_06"
+            rounded={false}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.vertical}
+            style="DARK_06"
+            rounded={false}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            style="DARK_07"
+            rounded={false}
+          />
+          <Tab
+            text="Tab"
+            display={orientation.vertical}
+            style="DARK_07"
+            rounded={false}
+          />
+        </div>
+        {/* NAV TABS */}
+        <div className="flex items-center content-center rounded px-5 bg-white">
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            style="LIGHT_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            style="LIGHT_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            style="LIGHT_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            style="LIGHT_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            style="LIGHT_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            style="LIGHT_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            style="LIGHT_NAV"
+          />
+        </div>
+        <div className="flex items-center content-center rounded">
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={false}
+            style="TRANS_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={false}
+            style="TRANS_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={false}
+            style="TRANS_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={false}
+            style="TRANS_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={false}
+            style="TRANS_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={false}
+            style="TRANS_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={false}
+            style="TRANS_NAV"
+          />
+        </div>
+        <div className="flex items-center content-center rounded px-5 bg-[#161616]">
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            style="DARK_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            style="DARK_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            style="DARK_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            style="DARK_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            style="DARK_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            style="DARK_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={true}
+            style="DARK_NAV"
+          />
+        </div>
+        <div className="flex items-center content-center rounded">
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={false}
+            style="TRANS_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={false}
+            style="TRANS_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={false}
+            style="TRANS_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={false}
+            style="TRANS_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={false}
+            style="TRANS_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={false}
+            style="TRANS_NAV"
+            className="pr-10"
+          />
+          <Tab
+            text="Tab"
+            display={orientation.horizontal}
+            rounded={false}
+            style="TRANS_NAV"
+          />
+        </div>
+      </div>
 
-        <div className="flex items-center content-center text-body-lg rounded">
-          <Tab
-            text="Tab"
-            display={orientation.horizontal}
-            rounded={true}
-            className="pr-10"
-          />
-          <Tab
-            text="Tab"
-            display={orientation.horizontal}
-            rounded={true}
-            className="pr-10"
-          />
-          <Tab
-            text="Tab"
-            display={orientation.horizontal}
-            rounded={true}
-            className="pr-10"
-          />
-          <Tab
-            text="Tab"
-            display={orientation.horizontal}
-            rounded={true}
-            className="pr-10"
-          />
-          <Tab
-            text="Tab"
-            display={orientation.horizontal}
-            rounded={true}
-            className="pr-10"
-          />
-          <Tab text="Tab" display={orientation.horizontal} rounded={true} />
-        </div>
-      </div>
       {/* just showing all the buttons here, delete later*/}
       {/* <div className="flex flex-col space-y-3 pr-3">
         <Button
