@@ -1,16 +1,20 @@
 import TabSvg from "./svgs/TabSvg";
 
 // Property Set Up //
+
+// Orientation
 export enum orientation {
   horizontal = "flex-row p-3",
   vertical = "flex-col p-3",
 }
 
+// Style Templates for easy use
 interface TabStyle {
   bgColor: string;
   textColor: string;
   iconColor: string;
 }
+// Creates object to hold each TabStyle attribute
 const tabStyles: { [key: string]: TabStyle } = {
   LIGHT_NAV: {
     bgColor: "bg-white",
@@ -98,7 +102,7 @@ const tabStyles: { [key: string]: TabStyle } = {
     iconColor: "#FECB33",
   },
 };
-
+// General Tab Properties
 interface TabProps {
   text: string;
   className?: string;
@@ -108,6 +112,7 @@ interface TabProps {
 }
 
 function Tab({ text, className, display, rounded, style }: TabProps) {
+  // Pulls the attributes from selected TabStyle object to use within the tab
   const { bgColor, textColor, iconColor } = tabStyles[style];
   let borderRadius = "rounded";
   return rounded ? (

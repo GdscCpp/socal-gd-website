@@ -19,7 +19,7 @@ const TabSvg = ({ width, height, display, className, fill }: TabSvgProps) => {
       viewBox="0 0 14 14"
     >
       {/* Can change to any other SVG paths, rect, lines, etc as needed */}
-      {/* Just be sure to include the fill property for its color */}
+      {/* Just be sure to include its assigned color */}
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
