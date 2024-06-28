@@ -22,7 +22,7 @@ const tabStyles: { [key: string]: TabStyle } = {
     iconColor: "#5693FD",
   },
   DARK_NAV: {
-    bgColor: "bg-[#161616]",
+    bgColor: "bg-dark-100",
     textColor: "text-blue-500",
     iconColor: "#5693FD",
   },
