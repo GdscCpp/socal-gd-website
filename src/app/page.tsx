@@ -1,10 +1,12 @@
+"use client";
+
 import Avatar from "@/components/Avatar";
 import Chip, { CHIP_VARIANTS } from "@/components/Chip";
 import Tooltip from "@/components/Tooltip";
 import Button, { BUTTON_VARIANTS } from "@/components/input/Button";
-import Checkbox from "@/components/input/Checkbox";
+import Checkbox, { CHECKBOX_VARIANTS } from "@/components/input/Checkbox";
 import Input from "@/components/input/Input";
-import Radio from "@/components/input/Radio";
+import Radio, { RADIO_VARIANTS } from "@/components/input/Radio";
 import Switch from "@/components/input/Switch";
 import Textarea from "@/components/input/Textarea";
 
@@ -101,9 +103,57 @@ export default function Page() {
       <Chip label="test" variant={CHIP_VARIANTS.TRANSPARENT} disabled={true} />
       <Chip label="test" variant={CHIP_VARIANTS.SOLID} disabled={true} />
 
-      <Checkbox label="test" checked={true} onChange={() => {}} />
+      <div className="flex flex-col space-y-3 pr-3">
+        <Checkbox
+          label="Option1"
+          checked={true}
+          onChange={() => {}}
+          variant={CHECKBOX_VARIANTS.CHECKBOX_PADDING_ON_LG}
+          disabled={false}
+        />
+        <Checkbox
+          label="Option2"
+          checked={false}
+          onChange={() => {}}
+          variant={CHECKBOX_VARIANTS.CHECKBOX_PADDING_ON_LG}
+          disabled={false}
+        />
+        <Checkbox
+          label="Option3"
+          checked={false}
+          onChange={() => {}}
+          variant={CHECKBOX_VARIANTS.CHECKBOX_DISABLED}
+          disabled={true}
+        />
+      </div>
+
       <Input label="test" type="text" value="test" onChange={() => {}} />
-      <Radio label="test" checked={true} onChange={() => {}} />
+
+      {/* showing all radio, delete later */}
+      <div className="flex flex-col space-y-3 pr-3">
+        <Radio
+          label="Option1"
+          checked={true}
+          onChange={() => {}}
+          variant={RADIO_VARIANTS.RADIO_PADDING_ON_LG}
+          disabled={false}
+        />
+        <Radio
+          label="Option2"
+          checked={false}
+          onChange={() => {}}
+          variant={RADIO_VARIANTS.RADIO_PADDING_ON_LG}
+          disabled={false}
+        />
+        <Radio
+          label="Option3"
+          checked={false}
+          onChange={() => {}}
+          variant={RADIO_VARIANTS.RADIO_DISABLED}
+          disabled={true}
+        />
+      </div>
+
       <Switch label="test" checked={true} onChange={() => {}} />
       <Textarea label="test" value="test" onChange={() => {}} />
       <Avatar src="https://avatars.githubusercontent.com/u/472312" alt="test" />
