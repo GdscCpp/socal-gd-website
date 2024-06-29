@@ -2,31 +2,62 @@ import React from "react";
 
 interface TooltipProps {
   label: string;
+  description: string;
+  position?: "top" | "bottom" | "left" | "right";
+  variant?: "start" | "center" | "end";
   className?: string;
 }
 
-export default function Tooltip({ label, className }: TooltipProps) {
-  const isDarkMode = className?.includes("dark");
-  const themeClasses = isDarkMode
-    ? "bg-gray-800 text-white"
-    : "bg-blue-500 text-white";
-  const pointerClasses = isDarkMode ? "border-t-gray-800" : "border-t-blue-500";
+export default function Tooltip({
+  label,
+  description,
+  position = "top",
+  variant = "center",
+  className,
+}: TooltipProps) {
+  const arrowPositionClasses = {
+    top: {
+      start: "top-0 left-3 transform -translate-y-1/2 rotate-45",
+      center:
+        "top-0 left-1/2 transform -translate-y-1/2 -translate-x-1/2 rotate-45",
+      end: "top-0 right-3 transform -translate-y-1/2 rotate-45",
+    },
+    bottom: {
+      start: "bottom-0 left-3 transform translate-y-1/2 rotate-45",
+      center:
+        "bottom-0 left-1/2 transform translate-y-1/2 -translate-x-1/2 rotate-45",
+      end: "bottom-0 right-3 transform translate-y-1/2 rotate-45",
+    },
+    left: {
+      start: "left-0 top-3 transform -translate-x-1/2 rotate-45",
+      center:
+        "left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45",
+      end: "left-0 bottom-3 transform -translate-x-1/2 rotate-45",
+    },
+    right: {
+      start: "right-0 top-3 transform translate-x-1/2 rotate-45",
+      center:
+        "right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 rotate-45",
+      end: "right-0 bottom-3 transform translate-x-1/2 rotate-45",
+    },
+  };
+
+  const colors = "bg-blue-500 dark:bg-gray-800";
 
   return (
-    <div className={`relative p-4 rounded-lg ${themeClasses} ${className}`}>
-      <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4">
-        <div
-          className={`w-4 h-4 transform rotate-45 ${pointerClasses} border-t border-l`}
-        ></div>
-      </div>
+    <div
+      className={`relative p-4 w-60 rounded-lg text-white ${colors} ${className}`}
+    >
+      <div
+        className={`absolute w-4 h-4 ${colors} ${arrowPositionClasses[position][variant]}`}
+      ></div>
       <div className="flex justify-between items-center mb-2">
         <h3 className="font-semibold">{label}</h3>
         <button className="text-xl font-bold">×</button>
       </div>
-      <p className="mb-2">Write tooltip description.</p>
+      <p className="mb-2">{description}</p>
       <div className="flex justify-between items-center">
         <div className="flex space-x-1">
-          {/* Temporary solution */}
           {Array(5)
             .fill(0)
             .map((_, i) => (

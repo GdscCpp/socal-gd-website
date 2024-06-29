@@ -3,7 +3,7 @@ import React from "react";
 interface AvatarProps {
   src: string;
   alt: string;
-  size?: "small" | "medium" | "large";
+  size?: "medium" | "large";
   className?: string;
 }
 
@@ -14,9 +14,8 @@ export default function Avatar({
   className,
 }: AvatarProps) {
   const sizeClasses = {
-    small: "w-8 h-8",
     medium: "w-12 h-12",
-    large: "w-16 h-16",
+    large: "w-14 h-14",
   };
 
   return (
