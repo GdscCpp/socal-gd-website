@@ -1,10 +1,10 @@
 import React from "react";
-import Tab, { orientation } from "@/components/Tab";
+import Tab, { ORIENTATION } from "@/components/Tab";
 
 interface TabSvgProps {
   width: number;
   height: number;
-  display?: orientation;
+  display?: ORIENTATION;
   className?: string;
   fill: string;
 }
@@ -15,7 +15,7 @@ const TabSvg = ({ width, height, display, className, fill }: TabSvgProps) => {
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      className={display === orientation.horizontal ? "mr-2" : "mb-2"}
+      className={display === ORIENTATION.HORIZONTAL ? "mr-2" : "mb-2"}
       viewBox="0 0 14 14"
     >
       {/* Can change to any other SVG paths, rect, lines, etc as needed */}
