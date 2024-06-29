@@ -22,8 +22,6 @@ export default function Textarea({
   const [isFocused, setIsFocused] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
-  const gradientClass = isFocused ? "border-gradient" : "border-gray-300";
-
   const fontSizes = {
     small: "text-sm",
     medium: "text-base",
@@ -58,8 +56,8 @@ export default function Textarea({
         {label} {required && <span className="text-red-500">*</span>}
       </label>
       <div
-        className={`${theme} relative ${gradientClass} rounded-md border-2 transition-all w-80
-      ${required && "border-red-500"}`}
+        className={`${theme} relative rounded-md border-2 transition-all w-80
+        ${required && "border-red-500"}`}
       >
         <textarea
           placeholder={value}
