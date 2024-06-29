@@ -3,9 +3,9 @@ import TabSvg from "./svgs/TabSvg";
 // Property Set Up //
 
 // Orientation
-export enum orientation {
-  horizontal = "flex-row p-3",
-  vertical = "flex-col p-3",
+export enum ORIENTATION {
+  HORIZONTAL = "flex-row p-3",
+  VERTICAL = "flex-col p-3",
 }
 
 // Style Templates for easy use
@@ -106,7 +106,7 @@ const tabStyles: { [key: string]: TabStyle } = {
 interface TabProps {
   text: string;
   className?: string;
-  display: orientation;
+  display: ORIENTATION;
   rounded: boolean;
   style: keyof typeof tabStyles;
 }
