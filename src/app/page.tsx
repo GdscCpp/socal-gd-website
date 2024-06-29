@@ -7,7 +7,7 @@ import Input from "@/components/input/Input";
 import Radio from "@/components/input/Radio";
 import Switch from "@/components/input/Switch";
 import Textarea from "@/components/input/Textarea";
-import Tab, { orientation } from "@/components/Tab";
+import Tab, { ORIENTATION } from "@/components/Tab";
 
 export default function Page() {
   return (
@@ -22,85 +22,85 @@ export default function Page() {
         <div className="flex flex-row space-x-3 pr-3">
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             style="LIGHT_01"
             rounded={true}
           />
           <Tab
             text="Tab"
-            display={orientation.vertical}
+            display={ORIENTATION.VERTICAL}
             style="LIGHT_01"
             rounded={true}
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             style="LIGHT_02"
             rounded={true}
           />
           <Tab
             text="Tab"
-            display={orientation.vertical}
+            display={ORIENTATION.VERTICAL}
             style="LIGHT_02"
             rounded={true}
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             style="LIGHT_03"
             rounded={true}
           />
           <Tab
             text="Tab"
-            display={orientation.vertical}
+            display={ORIENTATION.VERTICAL}
             style="LIGHT_03"
             rounded={true}
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             style="LIGHT_04"
             rounded={true}
           />
           <Tab
             text="Tab"
-            display={orientation.vertical}
+            display={ORIENTATION.VERTICAL}
             style="LIGHT_04"
             rounded={true}
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             style="LIGHT_05"
             rounded={true}
           />
           <Tab
             text="Tab"
-            display={orientation.vertical}
+            display={ORIENTATION.VERTICAL}
             style="LIGHT_05"
             rounded={true}
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             style="LIGHT_06"
             rounded={true}
           />
           <Tab
             text="Tab"
-            display={orientation.vertical}
+            display={ORIENTATION.VERTICAL}
             style="LIGHT_06"
             rounded={true}
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             style="DARK_07"
             rounded={true}
           />
           <Tab
             text="Tab"
-            display={orientation.vertical}
+            display={ORIENTATION.VERTICAL}
             style="DARK_07"
             rounded={true}
           />
@@ -108,85 +108,85 @@ export default function Page() {
         <div className="flex flex-row space-x-3 pr-3">
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             style="DARK_01"
             rounded={false}
           />
           <Tab
             text="Tab"
-            display={orientation.vertical}
+            display={ORIENTATION.VERTICAL}
             style="DARK_01"
             rounded={false}
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             style="DARK_02"
             rounded={false}
           />
           <Tab
             text="Tab"
-            display={orientation.vertical}
+            display={ORIENTATION.VERTICAL}
             style="DARK_02"
             rounded={false}
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             style="DARK_03"
             rounded={false}
           />
           <Tab
             text="Tab"
-            display={orientation.vertical}
+            display={ORIENTATION.VERTICAL}
             style="DARK_03"
             rounded={false}
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             style="DARK_04"
             rounded={false}
           />
           <Tab
             text="Tab"
-            display={orientation.vertical}
+            display={ORIENTATION.VERTICAL}
             style="DARK_04"
             rounded={false}
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             style="DARK_05"
             rounded={false}
           />
           <Tab
             text="Tab"
-            display={orientation.vertical}
+            display={ORIENTATION.VERTICAL}
             style="DARK_05"
             rounded={false}
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             style="DARK_06"
             rounded={false}
           />
           <Tab
             text="Tab"
-            display={orientation.vertical}
+            display={ORIENTATION.VERTICAL}
             style="DARK_06"
             rounded={false}
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             style="DARK_07"
             rounded={false}
           />
           <Tab
             text="Tab"
-            display={orientation.vertical}
+            display={ORIENTATION.VERTICAL}
             style="DARK_07"
             rounded={false}
           />
@@ -195,49 +195,49 @@ export default function Page() {
         <div className="flex items-center content-center rounded px-5 bg-white">
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={true}
             style="LIGHT_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={true}
             style="LIGHT_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={true}
             style="LIGHT_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={true}
             style="LIGHT_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={true}
             style="LIGHT_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={true}
             style="LIGHT_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={true}
             style="LIGHT_NAV"
           />
@@ -245,49 +245,49 @@ export default function Page() {
         <div className="flex items-center content-center rounded">
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={false}
             style="TRANS_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={false}
             style="TRANS_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={false}
             style="TRANS_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={false}
             style="TRANS_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={false}
             style="TRANS_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={false}
             style="TRANS_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={false}
             style="TRANS_NAV"
           />
@@ -295,49 +295,49 @@ export default function Page() {
         <div className="flex items-center content-center rounded px-5 bg-[#161616]">
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={true}
             style="DARK_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={true}
             style="DARK_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={true}
             style="DARK_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={true}
             style="DARK_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={true}
             style="DARK_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={true}
             style="DARK_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={true}
             style="DARK_NAV"
           />
@@ -345,49 +345,49 @@ export default function Page() {
         <div className="flex items-center content-center rounded">
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={false}
             style="TRANS_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={false}
             style="TRANS_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={false}
             style="TRANS_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={false}
             style="TRANS_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={false}
             style="TRANS_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={false}
             style="TRANS_NAV"
             className="pr-10"
           />
           <Tab
             text="Tab"
-            display={orientation.horizontal}
+            display={ORIENTATION.HORIZONTAL}
             rounded={false}
             style="TRANS_NAV"
           />
