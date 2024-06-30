@@ -127,7 +127,7 @@ function Tab({ text, className, display, rounded, style }: TabProps) {
           display={display}
           fill={`${iconColor}`}
         />
-        <p className="m-0">{text}</p>
+        {text}
       </button>
     </div>
   ) : (
@@ -142,7 +142,7 @@ function Tab({ text, className, display, rounded, style }: TabProps) {
           display={display}
           fill={`${iconColor}`}
         />
-        <p className="m-0">{text}</p>
+        {text}
       </button>
     </div>
   );
