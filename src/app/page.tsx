@@ -106,23 +106,30 @@ export default function Page() {
       <div className="flex flex-col space-y-3 pr-3">
         <Checkbox
           label="Option1"
-          checked={true}
+          checked
           onChange={() => {}}
           variant={CHECKBOX_VARIANTS.CHECKBOX_PADDING_ON_LG}
           disabled={false}
         />
         <Checkbox
           label="Option2"
-          checked={false}
+          checked
           onChange={() => {}}
-          variant={CHECKBOX_VARIANTS.CHECKBOX_PADDING_ON_LG}
+          variant={CHECKBOX_VARIANTS.CHECKBOX_PADDING_OFF_LG}
           disabled={false}
         />
         <Checkbox
           label="Option3"
-          checked={false}
+          checked
           onChange={() => {}}
-          variant={CHECKBOX_VARIANTS.CHECKBOX_DISABLED}
+          variant={CHECKBOX_VARIANTS.CHECKBOX_DISABLED_LG}
+          disabled={true}
+        />
+        <Checkbox
+          label="Option3"
+          checked={true}
+          onChange={() => {}}
+          variant={CHECKBOX_VARIANTS.CHECKBOX_DISABLED_LG}
           disabled={true}
         />
       </div>
@@ -133,21 +140,28 @@ export default function Page() {
       <div className="flex flex-col space-y-3 pr-3">
         <Radio
           label="Option1"
-          checked={true}
+          checked
           onChange={() => {}}
           variant={RADIO_VARIANTS.RADIO_PADDING_ON_LG}
           disabled={false}
         />
         <Radio
           label="Option2"
-          checked={false}
+          checked
           onChange={() => {}}
-          variant={RADIO_VARIANTS.RADIO_PADDING_ON_LG}
+          variant={RADIO_VARIANTS.RADIO_PADDING_OFF_LG}
           disabled={false}
         />
         <Radio
           label="Option3"
-          checked={false}
+          checked
+          onChange={() => {}}
+          variant={RADIO_VARIANTS.RADIO_DISABLED}
+          disabled={true}
+        />
+        <Radio
+          label="Option3"
+          checked
           onChange={() => {}}
           variant={RADIO_VARIANTS.RADIO_DISABLED}
           disabled={true}
