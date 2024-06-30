@@ -6,7 +6,7 @@ import Icon from "/public/icons/tab.svg";
 interface TabSvgProps {
   width: number;
   height: number;
-  display?: ORIENTATION;
+  display: ORIENTATION;
   className?: string;
   fill: string;
 }

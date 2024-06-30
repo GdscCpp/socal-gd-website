@@ -127,9 +127,7 @@ function Tab({ text, className, display, rounded, style }: TabProps) {
           display={display}
           fill={`${iconColor}`} // not working
         />
-        <p className={`${display === ORIENTATION.HORIZONTAL ? "pr-3" : ""}`}>
-          {text}
-        </p>
+        <p className="overflow-hidden">{text}</p>
       </button>
     </div>
   ) : (
@@ -144,9 +142,7 @@ function Tab({ text, className, display, rounded, style }: TabProps) {
           display={display}
           fill={`${iconColor}`} // not working
         />
-        <p className={`${display === ORIENTATION.HORIZONTAL ? "pr-3" : ""}`}>
-          {text}
-        </p>
+        <p className="overflow-hidden">{text}</p>
       </button>
     </div>
   );
