@@ -125,9 +125,11 @@ function Tab({ text, className, display, rounded, style }: TabProps) {
           width={14}
           height={14}
           display={display}
-          fill={`${iconColor}`}
+          fill={`${iconColor}`} // not working
         />
-        {text}
+        <p className={`${display === ORIENTATION.HORIZONTAL ? "pr-3" : ""}`}>
+          {text}
+        </p>
       </button>
     </div>
   ) : (
@@ -140,9 +142,11 @@ function Tab({ text, className, display, rounded, style }: TabProps) {
           width={14}
           height={14}
           display={display}
-          fill={`${iconColor}`}
+          fill={`${iconColor}`} // not working
         />
-        {text}
+        <p className={`${display === ORIENTATION.HORIZONTAL ? "pr-3" : ""}`}>
+          {text}
+        </p>
       </button>
     </div>
   );
