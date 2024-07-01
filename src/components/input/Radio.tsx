@@ -51,7 +51,6 @@ export default function Radio({
       <div className="flex gap-2">
         <input
           type="radio"
-          id="LG_PADDING_RADIO"
           checked={isChecked}
           onChange={onChange}
           disabled={disabled}
@@ -73,7 +72,9 @@ export default function Radio({
             cursor-pointer
           `}
         />
-        <label htmlFor="Radio">{label}</label>
+        <label className="select-none" htmlFor="Radio">
+          {label}
+        </label>
         <RadioSVG />
         <polyline points="20 6 9 17 4 12"></polyline>
       </div>
