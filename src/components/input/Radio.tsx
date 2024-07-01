@@ -1,6 +1,7 @@
 {
   /* For both Radio and Checkboxes pressing on the label word does not check the boxes */
 }
+import RadioSVG from "../svgs/Radio";
 
 export enum RADIO_VARIANTS {
   RADIO_PADDING_ON_LG = "has-[:checked]:hover:ring-purple-400 has-[:checked]:bg-purple-500 has-[:checked]:bg-opacity-15 has-[:checked]:ring-purple-500 has-[:checked]:ring-1 opacity-100 hover:border-opacity-100 hover:bg-blue-500 hover:bg-opacity-15 py-3 text-body-xl hover:bg-purple-500 active:bg-dark-500",
@@ -69,16 +70,7 @@ export default function Radio({
           `}
         />
         <label htmlFor="Radio">{label}</label>
-        <svg
-          className="absolute w-4 h-4 mt-2 ml-1 hidden peer-checked:block pointer-events-none"
-          width="14"
-          height="14"
-          viewBox="0 0 14 14"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="7" cy="7" r="7" fill="white" />
-        </svg>
+        <RadioSVG />
         <polyline points="20 6 9 17 4 12"></polyline>
       </div>
     </label>
