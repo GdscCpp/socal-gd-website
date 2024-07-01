@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 {
   /* Stuck on
   Checkboxes with padding: 
@@ -36,11 +38,14 @@ export default function Checkbox({
   className,
   variant,
 }: CheckboxProps) {
+  const [isChecked, setIsChecked] = useState(checked);
+
   const isPaddingOFF =
     variant === CHECKBOX_VARIANTS.CHECKBOX_PADDING_OFF_LG ||
     variant === CHECKBOX_VARIANTS.CHECKBOX_PADDING_OFF_MD;
   return (
     <label
+      onClick={() => setIsChecked(!isChecked)}
       className={`
         relative
         rounded-md

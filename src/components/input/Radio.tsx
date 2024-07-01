@@ -1,6 +1,6 @@
-{
-  /* For both Radio and Checkboxes pressing on the label word does not check the boxes */
-}
+// If needed we will need to add a radio group component later on
+
+import { useState } from "react";
 import RadioSVG from "../svgs/Radio";
 
 export enum RADIO_VARIANTS {
@@ -30,6 +30,8 @@ export default function Radio({
   className,
   variant,
 }: RadioProps) {
+  const [isChecked, setIsChecked] = useState(checked);
+
   const isPaddingOFF =
     variant === RADIO_VARIANTS.RADIO_PADDING_OFF_LG ||
     variant === RADIO_VARIANTS.RADIO_PADDING_OFF_MD;
@@ -44,11 +46,13 @@ export default function Radio({
         ease-in-out
         ${variant}
       `}
+      onClick={() => setIsChecked(!isChecked)}
     >
       <div className="flex gap-2">
         <input
           type="radio"
           id="LG_PADDING_RADIO"
+          checked={isChecked}
           onChange={onChange}
           disabled={disabled}
           /* If there is no padding, only show for the icons itself */
