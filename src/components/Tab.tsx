@@ -1,6 +1,6 @@
 import TabSvg from "./svgs/TabSvg";
 
-// Property Set Up //
+// Later on we can setup the tab children and states for when a tab is selected
 
 // Orientation
 export enum ORIENTATION {
