@@ -23,6 +23,11 @@ const config: Config = {
           "linear-gradient(to right, #fbbc04 0%,#fbbc04 25%,#34a853 75%,#34a853 100%);",
       },
       colors: {
+        purple: {
+          400: "#B99CFC",
+          500: "#7D49F8",
+        },
+
         green: {
           500: "#34A853",
         },

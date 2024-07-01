@@ -31,3 +31,10 @@ body {
     text-wrap: balance;
   }
 }
+
+.border-gradient {
+  border-image: linear-gradient(90deg, blue, red, yellow, green) 1;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+}
