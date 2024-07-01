@@ -3,42 +3,42 @@ import React from "react";
 interface TooltipProps {
   label: string;
   description: string;
-  position?: "top" | "bottom" | "left" | "right";
-  variant?: "start" | "center" | "end";
+  position?: "Top" | "Bottom" | "Left" | "Right";
+  variant?: "Start" | "Center" | "End";
   className?: string;
 }
 
 export default function Tooltip({
   label,
   description,
-  position = "top",
-  variant = "center",
+  position = "Top",
+  variant = "Center",
   className,
 }: TooltipProps) {
-  const arrowPositionClasses = {
-    top: {
-      start: "top-0 left-3 transform -translate-y-1/2 rotate-45",
-      center:
+  const ArrowPositionClasses = {
+    Top: {
+      Start: "top-0 left-3 transform -translate-y-1/2 rotate-45",
+      Center:
         "top-0 left-1/2 transform -translate-y-1/2 -translate-x-1/2 rotate-45",
-      end: "top-0 right-3 transform -translate-y-1/2 rotate-45",
+      End: "top-0 right-3 transform -translate-y-1/2 rotate-45",
     },
-    bottom: {
-      start: "bottom-0 left-3 transform translate-y-1/2 rotate-45",
-      center:
+    Bottom: {
+      Start: "bottom-0 left-3 transform translate-y-1/2 rotate-45",
+      Center:
         "bottom-0 left-1/2 transform translate-y-1/2 -translate-x-1/2 rotate-45",
-      end: "bottom-0 right-3 transform translate-y-1/2 rotate-45",
+      End: "bottom-0 right-3 transform translate-y-1/2 rotate-45",
     },
-    left: {
-      start: "left-0 top-3 transform -translate-x-1/2 rotate-45",
-      center:
+    Left: {
+      Start: "left-0 top-3 transform -translate-x-1/2 rotate-45",
+      Center:
         "left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45",
-      end: "left-0 bottom-3 transform -translate-x-1/2 rotate-45",
+      End: "left-0 bottom-3 transform -translate-x-1/2 rotate-45",
     },
-    right: {
-      start: "right-0 top-3 transform translate-x-1/2 rotate-45",
-      center:
+    Right: {
+      Start: "right-0 top-3 transform translate-x-1/2 rotate-45",
+      Center:
         "right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 rotate-45",
-      end: "right-0 bottom-3 transform translate-x-1/2 rotate-45",
+      End: "right-0 bottom-3 transform translate-x-1/2 rotate-45",
     },
   };
 
@@ -49,7 +49,7 @@ export default function Tooltip({
       className={`relative p-4 w-60 rounded-lg text-white ${colors} ${className}`}
     >
       <div
-        className={`absolute w-4 h-4 ${colors} ${arrowPositionClasses[position][variant]}`}
+        className={`absolute w-4 h-4 ${colors} ${ArrowPositionClasses[position][variant]}`}
       ></div>
       <div className="flex justify-between items-center mb-2">
         <h3 className="font-semibold">{label}</h3>

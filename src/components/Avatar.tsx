@@ -3,23 +3,23 @@ import React from "react";
 interface AvatarProps {
   src: string;
   alt: string;
-  size?: "medium" | "large";
+  size?: keyof typeof SizeClasses;
   className?: string;
+}
+
+enum SizeClasses {
+  Medium = "w-12 h-12",
+  Large = "w-14 h-14",
 }
 
 export default function Avatar({
   src,
   alt,
-  size = "medium",
+  size = "Medium",
   className,
 }: AvatarProps) {
-  const sizeClasses = {
-    medium: "w-12 h-12",
-    large: "w-14 h-14",
-  };
-
   return (
-    <div className={`relative inline-block ${sizeClasses[size]} ${className}`}>
+    <div className={`relative inline-block ${SizeClasses[size]} ${className}`}>
       {src ? (
         <img
           src={src}

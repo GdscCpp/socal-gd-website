@@ -7,8 +7,14 @@ interface InputProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
   required?: boolean;
-  size?: "small" | "medium" | "large";
+  size?: keyof typeof FontSizes;
   className?: string;
+}
+
+enum FontSizes {
+  Small = "text-sm",
+  Medium = "text-base",
+  Lare = "text-lg",
 }
 
 export default function Input({
@@ -18,17 +24,11 @@ export default function Input({
   onChange,
   disabled = false,
   required = false,
-  size = "medium",
+  size = "Medium",
   className,
 }: InputProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-
-  const fontSizes = {
-    small: "text-sm",
-    medium: "text-base",
-    large: "text-lg",
-  };
 
   const colorScheme = {
     default: "bg-white dark:bg-dark-400 text-gray-300 border-gray-300",
@@ -53,7 +53,7 @@ export default function Input({
       onMouseLeave={() => setIsHovered(false)}
     >
       <label
-        className={`block ${fontSizes[size]} text-gray-700 dark:text-gray-300 mb-1`}
+        className={`block ${FontSizes[size]} text-dark-400 dark:text-gray-200 mb-1`}
       >
         {label} {required && <span className="text-red-500">*</span>}
       </label>
@@ -63,7 +63,7 @@ export default function Input({
       >
         <input
           type={type}
-          className={`${fontSizes[size]} ${theme} flex-1 bg-transparent focus:outline-none
+          className={`${FontSizes[size]} ${theme} flex-1 bg-transparent focus:outline-none
           ${disabled ? "cursor-not-allowed" : "cursor-pointer"}`}
           placeholder={value}
           onChange={onChange}

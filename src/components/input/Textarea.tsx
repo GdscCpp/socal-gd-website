@@ -51,7 +51,7 @@ export default function Textarea({
       onMouseLeave={() => setIsHovered(false)}
     >
       <label
-        className={`block ${fontSizes[size]} text-dark-400 dark:text-gray-100 rounded-md`}
+        className={`block ${fontSizes[size]} text-dark-400 dark:text-gray-200 rounded-md`}
       >
         {label} {required && <span className="text-red-500">*</span>}
       </label>
