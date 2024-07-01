@@ -1,3 +1,14 @@
+{
+  /* Stuck on
+  Checkboxes with padding: 
+  - there is blue ring around when pressed on instead of gradient,
+  Checkboxes with no padding: 
+  - when selected and hovered over, it fills purple when it should be white still
+  - checkbox and label should have a blue shadow when pressed 
+  - checkmark for Option2 only shows up when Option1 is checked
+  */
+}
+
 export enum CHECKBOX_VARIANTS {
   CHECKBOX_PADDING_ON_LG = "hover:shadow-button-hover active:ring-1 active:shadow-xl active:shadow-blue-500 has-[:checked]:bg-purple-500 has-[:checked]:bg-opacity-15 has-[:checked]:ring-blue-500 has-[:checked]:ring-1 opacity-100 hover:border-opacity-100 hover:bg-blue-500 hover:bg-opacity-15 py-3 text-body-xl hover:bg-purple-500 active:bg-dark-500",
   CHECKBOX_PADDING_OFF_LG = "bg-dark-500 text-white py-3 text-body-xl",
@@ -37,7 +48,7 @@ export default function Checkbox({
         py-0.5
         duration-200
         ease-in-out
-        ${className}
+        cursor-pointer
         ${variant}
       `}
     >
@@ -47,9 +58,27 @@ export default function Checkbox({
           id="LG_PADDING_Checkbox"
           onChange={onChange}
           disabled={disabled}
+          /* If there is no padding, only show for the icons itself */
           className={`
-            ${isPaddingOFF ? "hover:ring-4 hover:ring-purple-500 hover:ring-opacity-15 hover:border-white-500 hover:border-opacity-15 hover:bg-purple-500 hover:bg-opacity-15 " : ""}
-            relative peer shrink-0 appearance-none w-6 h-6 border-2 border-white-500 rounded-md bg-dark-500 mt-1 checked:bg-white checked:border-0 disabled:border-gray-500 disabled: visible`}
+            ${isPaddingOFF ? "transition active:ring-1 active:shadow-md active:shadow-blue-500 hover:ring-4 hover:ring-purple-500 hover:ring-opacity-15 hover:border-white-500 hover:border-opacity-15 hover:bg-purple-500 hover:bg-opacity-15" : ""}
+            relative 
+            transition
+            peer 
+            shrink-0 
+            appearance-none 
+            w-6 
+            h-6 
+            border-2 
+            border-white-500 
+            rounded-md 
+            bg-dark-500 
+            mt-1 
+            checked:bg-white 
+            checked:border-0 
+            disabled:border-gray-500 
+            disabled: visible
+            cursor-pointer
+          `}
         />
         <label htmlFor="Checkbox">{label}</label>
         <svg

@@ -24,6 +24,7 @@ const config: Config = {
       },
       colors: {
         purple: {
+          400: "#B99CFC",
           500: "#7D49F8",
         },
 

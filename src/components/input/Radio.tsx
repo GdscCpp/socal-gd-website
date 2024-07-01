@@ -1,5 +1,9 @@
+{
+  /* For both Radio and Checkboxes pressing on the label word does not check the boxes */
+}
+
 export enum RADIO_VARIANTS {
-  RADIO_PADDING_ON_LG = "has-[:checked]:bg-purple-500 has-[:checked]:bg-opacity-15 has-[:checked]:ring-purple-500 has-[:checked]:ring-1 opacity-100 hover:border-opacity-100 hover:bg-blue-500 hover:bg-opacity-15 py-3 text-body-xl hover:bg-purple-500 active:bg-dark-500",
+  RADIO_PADDING_ON_LG = "has-[:checked]:hover:ring-purple-400 has-[:checked]:bg-purple-500 has-[:checked]:bg-opacity-15 has-[:checked]:ring-purple-500 has-[:checked]:ring-1 opacity-100 hover:border-opacity-100 hover:bg-blue-500 hover:bg-opacity-15 py-3 text-body-xl hover:bg-purple-500 active:bg-dark-500",
   RADIO_PADDING_OFF_LG = "bg-dark-500 text-white py-3 text-body-xl",
   RADIO_DISABLED = "py-3 text-body-xl text-gray-400 dark:text-gray-500",
 
@@ -37,7 +41,6 @@ export default function Radio({
         py-0.5
         duration-200
         ease-in-out
-        ${className}
         ${variant}
       `}
     >
@@ -47,10 +50,23 @@ export default function Radio({
           id="LG_PADDING_RADIO"
           onChange={onChange}
           disabled={disabled}
+          /* If there is no padding, only show for the icons itself */
           className={`
-            ${isPaddingOFF ? "hover:ring-4 hover:ring-purple-500 hover:ring-opacity-15 hover:border-white-500  hover:border-opacity-15 hover:bg-purple-500 hover:bg-opacity-15" : ""}
-            relative peer shrink-0 appearance-none w-6 h-6 border-2 border-white-500 rounded-xl mt-1 disabled:border-gray-500 disabled: visible
-            `}
+            ${isPaddingOFF ? "hover:ring-4 hover:ring-purple-500 hover:ring-opacity-15 hover:border-white-500 hover:border-opacity-15 hover:bg-purple-500 hover:bg-opacity-15" : ""}
+            relative 
+            peer 
+            shrink-0 
+            appearance-none 
+            w-6 
+            h-6 
+            border-2 
+            border-white-500 
+            rounded-xl 
+            mt-1 
+            disabled:border-gray-500 
+            disabled: visible
+            cursor-pointer
+          `}
         />
         <label htmlFor="Radio">{label}</label>
         <svg
