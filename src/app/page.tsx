@@ -111,7 +111,7 @@ export default function Page() {
           variant={CHECKBOX_VARIANTS.CHECKBOX_PADDING_ON_LG}
           disabled={false}
         />
-        <Checkbox
+        {/* <Checkbox
           label="Option2"
           checked
           onChange={() => {}}
@@ -131,7 +131,7 @@ export default function Page() {
           onChange={() => {}}
           variant={CHECKBOX_VARIANTS.CHECKBOX_DISABLED_LG}
           disabled={true}
-        />
+        /> */}
       </div>
 
       <Input label="test" type="text" value="test" onChange={() => {}} />
