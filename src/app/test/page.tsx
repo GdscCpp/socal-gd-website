@@ -1,3 +1,5 @@
+"use client";
+
 import Avatar from "@/components/Avatar";
 import Chip from "@/components/Chip";
 import Tooltip from "@/components/Tooltip";
@@ -22,7 +24,7 @@ export default function Page() {
       <Textarea label="test" value="test" onChange={() => {}} />
       <Avatar src="https://avatars.githubusercontent.com/u/472312" alt="test" />
       <Chip label="test" />
-      <Tooltip label="test" />
+      <Tooltip label="test" description="Test description." />
     </div>
   );
 }
