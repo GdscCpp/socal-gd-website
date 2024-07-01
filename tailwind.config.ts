@@ -23,6 +23,11 @@ const config: Config = {
           "linear-gradient(to right, #fbbc04 0%,#fbbc04 25%,#34a853 75%,#34a853 100%);",
       },
       colors: {
+        purple: {
+          400: "#B99CFC",
+          500: "#7D49F8",
+        },
+
         green: {
           500: "#34A853",
         },
@@ -61,7 +66,7 @@ const config: Config = {
           300: "#1C1C1C",
           200: "#1A1A1A",
           100: "#161616",
-          50: "121212",
+          50: "#121212",
         },
       },
     },
@@ -82,6 +87,12 @@ const config: Config = {
       md: "768px",
       lg: "1280px",
       xl: "1536px",
+    },
+    boxShadow: {
+      "button-hover": "5px 5px 15px -2px rgb(0 0 0)",
+      "button-clicked": "inset 0px 10px 15px -10px rgba(0, 0, 0, 0.9)",
+      "gradient-button-default": "5px 7px 20px -4px rgb(0 0 0)",
+      none: "0px 0px 0px rbga(0,0,0,0)",
     },
   },
   plugins: [],
