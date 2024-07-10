@@ -28,13 +28,13 @@ export default function Header() {
   ];
 
   return (
-    <div className="bg-dark-400 text-white">
+    <div className="bg-dark-400 text-white py-40">
       {/* FLEXBOX + LINE */}
       <div className="flex items-center justify-center w-full  bg-dark-400 text-white">
         <hr className="absolute top-6 md:top-40 left-0 right-0 h-0.5 bg-white" />
 
         {/* TEXT HEADER */}
-        <div className="flex flex-col mb-40 m-20 left-40">
+        <div className="flex flex-col m-20 left-40">
           <p className="text-heading-xl font-bold">Google For Developers</p>
           <p className="text-heading-lg">Southern California</p>
 
@@ -70,11 +70,11 @@ export default function Header() {
         </div>
 
         {/* Bottom line */}
-        <hr className="absolute bottom-6 left-0 right-0 h-0.5 bg-white" />
+        <hr className="absolute bottom-60 left-0 right-0 h-0.5 bg-white" />
       </div>
 
       {/* CARDS SECTION */}
-      <div className="w-full bg-dark-400 pt-8">
+      <div className="w-full bg-dark-400 py-36">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {cards.map((card, index) => (
