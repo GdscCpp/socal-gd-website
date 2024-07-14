@@ -24,13 +24,13 @@ export default function Card({
       <p className="text-dark-300 text-center mb-4">{description}</p>
       {/* ICON */}
       <div className="mb-4">
-        <Image src={iconSrc} alt={title} width={48} height={48} />
+        <Image src={iconSrc} alt={title} width={60} height={60} />
       </div>
 
       {/* LINK */}
       <a
         href={linkHref}
-        className="text-blue-500 hover:text-blue-700 transition-colors duration-300 text-sm font-medium"
+        className="lg:ml-60 text-blue-500 hover:text-blue-700 transition-colors duration-300 text-sm font-medium underline"
       >
         {linkText}
       </a>

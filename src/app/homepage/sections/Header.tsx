@@ -28,53 +28,48 @@ export default function Header() {
   ];
 
   return (
-    <div className="bg-dark-400 text-white py-40">
-      {/* FLEXBOX + LINE */}
-      <div className="flex items-center justify-center w-full  bg-dark-400 text-white">
-        <hr className="absolute top-6 md:top-40 left-0 right-0 h-0.5 bg-white" />
+    <div className="bg-dark-400 text-white">
+      {/* Main content section */}
+      <div className="relative  mx-auto px-4 pt-1  ">
+        {/* Top line */}
+        <hr className="absolute top-0 left-0 right-0 h-0.5 bg-white" />
+        <div className="ml-20 mr-20">
+          <div className="flex flex-col md:flex-row items-center justify-between ">
+            {/* Text and button section */}
+            <div className="text-center md:text-left mb-8 md:mb-0 z-10">
+              <h1 className="text-heading-lg lg:text-heading-xl font-bold mb-2">
+                Google For Developers
+              </h1>
+              <h2 className=" text-title-xl md:text-heading-md lg:text-heading-lg mb-6">
+                Southern California
+              </h2>
+              <div className="sm:ml-20 md:ml-0 lg:ml-96">
+                <Button
+                  className="w-38  flex items-center justify-items-end md:w-auto text-body-lg md:text-body-xl lg:ml-40"
+                  label="Find a Group"
+                  type="button"
+                  variant={BUTTON_VARIANTS.GRADIENT_1_SM}
+                />
+              </div>
+            </div>
 
-        {/* TEXT HEADER */}
-        <div className="flex flex-col m-20 left-40">
-          <p className="text-heading-xl font-bold">Google For Developers</p>
-          <p className="text-heading-lg">Southern California</p>
+            {/* Image section */}
 
-          {/* ICON SVG MOBILE */}
-          <div className="md:hidden mt-4 md:mt-0 md:ml-auto">
             <Image
-              src={"/images/googleIcon1.png"}
+              src="/images/googleio.png"
               height={300}
               width={300}
-              alt={"Google Icon"}
-              className="mx-auto md:mx-0"
+              alt="Google Icon"
+              className="mx-auto w-full md:w-80 max-w-4xl"
             />
           </div>
-
-          {/* INPUT */}
-          <Button
-            className="relative  w-full lg:ml-40 lg:left-96 md:w-40 md:mt-4  text-body-xl"
-            label={"Find a Group"}
-            type="button"
-            variant={BUTTON_VARIANTS.GRADIENT_1_SM}
-          />
         </div>
-
-        {/* ICON SVG DESKTOP*/}
-        <div className="hidden md:flex items-center justify-center mt-4 md:mt-0 md:ml-auto md:mr-auto">
-          <Image
-            src={"/images/googleIcon1.png"}
-            height={400}
-            width={400}
-            alt={"Google Icon"}
-            className="mx-auto md:mx-0"
-          />
-        </div>
-
         {/* Bottom line */}
-        <hr className="absolute bottom-60 left-0 right-0 h-0.5 bg-white" />
+        <hr className="absolute bottom-0 left-0 right-0 h-0.5 bg-white" />
       </div>
 
-      {/* CARDS SECTION */}
-      <div className="w-full bg-dark-400 py-36">
+      {/* Cards section */}
+      <div className="bg-dark-400 py-12 md:py-20 lg:py-36 relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {cards.map((card, index) => (
