@@ -6,7 +6,7 @@ export default function Navbar() {
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         <div className="flex items-center mb-4 md:mb-0">
           <Image
-            src="/images/googeldevgroup.png"
+            src="/images/google-logo.png"
             height={80}
             width={80}
             alt="Google Dev Group logo"

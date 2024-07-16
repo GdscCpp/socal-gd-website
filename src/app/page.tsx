@@ -1,11 +1,13 @@
-"use client";
+import End from "./homepage/End";
+import Header from "./homepage/Header";
+import Middle from "./homepage/Middle";
 
-import HomePage from "./homepage/page";
-
-export default function Page() {
+export default function HomePage() {
   return (
-    <div>
-      <HomePage />
-    </div>
+    <>
+      <Header />
+      <Middle />
+      <End />
+    </>
   );
 }

@@ -52,7 +52,7 @@ export default function Middle() {
       </div>
 
       <div className="flex flex-col md:flex-row gap-8 w-full max-w-6xl">
-        {/* First Col */}
+        {/* FIRST COL */}
         <div className="flex-1 bg-white rounded-xl p-8">
           <p className="text-heading-md mb-2">Featured Events</p>
           <div className="relative h-60 md:h-80">
@@ -65,7 +65,7 @@ export default function Middle() {
           </div>
         </div>
 
-        {/* Second Col */}
+        {/* SECOUND COL */}
         <div className="flex-1 flex flex-col gap-8">
           <div className="bg-white rounded-xl p-8 text-center">
             <p className="text-heading-md mb-4">What We Do</p>
@@ -74,14 +74,14 @@ export default function Middle() {
               for local businesses and communities with Google technology.
             </p>
           </div>
-          {/* Stat Row */}
+          {/* STAT ROW */}
           <div className="grid grid-cols-2 gap-4">
-            {/* Box 1 */}
+            {/* BOX 1 */}
             <div className="bg-white rounded-xl p-4 md:h-44 lg:h-48 text-center">
               <p className="text-heading-md mb-2 mt-4">2100+</p>
               <p className="text-body-md">College and university chapters+</p>
             </div>
-            {/* Box 2 */}
+            {/* BOX 2 */}
             <div className="bg-white rounded-xl p-4 md:h-44 lg:h-48 text-center">
               <p className="text-heading-md mb-2 mt-4">100</p>
               <p className="text-body-md">Countries Participating</p>
