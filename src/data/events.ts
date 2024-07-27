@@ -1,7 +1,21 @@
 //Functions to retrieve event info from each site's API
 
-import { EventEmitterReferencingAsyncResource } from "events";
-import { StringLiteral } from "typescript";
+interface EventInfo {
+  id: number;
+  title: string;
+  description: string;
+  picture: object;
+  city: string;
+  date: Date;
+  eventType: string;
+  url: string;
+  chapterTitle: string;
+}
+
+interface ErrorResponse {
+  message: string;
+  cause: any;
+}
 
 //GDSC Events
 export async function getEventsGdsc(
@@ -67,21 +81,4 @@ export async function getEventsGDG(
     };
     return response;
   }
-}
-
-interface EventInfo {
-  id: number;
-  title: string;
-  description: string;
-  picture: object;
-  city: string;
-  date: Date;
-  eventType: string;
-  url: string;
-  chapterTitle: string;
-}
-
-interface ErrorResponse {
-  message: string;
-  cause: any;
 }
