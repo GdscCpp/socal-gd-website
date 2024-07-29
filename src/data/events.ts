@@ -1,5 +1,4 @@
-//Functions to retrieve event info from each site's API
-
+//Event object
 interface EventInfo {
   id: number;
   title: string;
@@ -12,12 +11,20 @@ interface EventInfo {
   chapterTitle: string;
 }
 
+//Error response object
 interface ErrorResponse {
   message: string;
   cause: any;
 }
 
-//GDSC Events
+/*
+* Fetches upcoming GDSC events.
+*
+* @param {boolean} orderByProximity?   Optional: If true, events are ordered by proximity based on the client's location.
+* @param {number} proximity?           Optional: If specified, only events in the given proximity from the client's location are fetched.
+*
+* @return {Promise<EventInfo[] | ErrorResponse>} An array of EventInfo objects that hold information on upcoming events, or an error response object if an error occurs.
+*/
 export async function getEventsGdsc(
   orderByProximity?: boolean,
   proximity?: number,
@@ -50,7 +57,14 @@ export async function getEventsGdsc(
   }
 }
 
-//GDG Events
+/*
+* Fetches upcoming GDG events.
+*
+* @param {boolean} orderByProximity?   Optional: If true, events are ordered by proximity based on the client's location.
+* @param {number} proximity?           Optional: If specified, only events in the given proximity from the client's location are fetched.
+*
+* @return {Promise<EventInfo[] | ErrorResponse>} An array of EventInfo objects that hold information on upcoming events, or an error response object if an error occurs.
+*/
 export async function getEventsGDG(
   orderByProximity?: boolean,
   proximity?: number,
