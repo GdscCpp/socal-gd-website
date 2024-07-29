@@ -28,7 +28,7 @@ interface ErrorResponse {
 export async function getEventsGdsc(
   orderByProximity?: boolean,
   proximity?: number,
-) {
+): Promise<EventInfo[] | ErrorResponse> {
   try {
     const url: string = `https://gdsc.community.dev/api/search/?result_types=upcoming_event${orderByProximity ? "&order_by_proximity=true" : ""}${proximity ? `&proximity=${proximity}` : ""}`;
     const response = await fetch(url);
@@ -68,7 +68,7 @@ export async function getEventsGdsc(
 export async function getEventsGDG(
   orderByProximity?: boolean,
   proximity?: number,
-) {
+): Promise<EventInfo[] | ErrorResponse> {
   try {
     const url: string = `https://gdg.community.dev/api/search/?result_types=upcoming_event${orderByProximity ? "&order_by_proximity=true" : ""}${proximity ? `&proximity=${proximity}` : ""}`;
     const response = await fetch(url);
