@@ -20,7 +20,7 @@ export default function LeadCard({ name, city, avatarSrc }: CardProps) {
         />
         <div className="flex flex-col">
           <p className="text-body-xl font-semibold">{name}</p>
-          <p className="text-body-md text-gray-600">GDG LEAD {city}</p>
+          <p className="text-body-md text-gray-600 mb-6">GDG LEAD {city}</p>
         </div>
       </div>
       <div className="flex space-x-2">

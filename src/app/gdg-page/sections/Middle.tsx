@@ -30,7 +30,7 @@ export default function FindGroup() {
     <div className="flex flex-col bg-dark-400 p-4 min-h-screen">
       <div className="container mx-auto">
         {/* HEADER */}
-        <h1 className="text-heading-lg text-white mb-8 text-center">
+        <h1 className="text-heading-md text-white mb-8 text-center font-bold">
           Find a Group
         </h1>
 
@@ -49,8 +49,8 @@ export default function FindGroup() {
 
           {/* GSDC LEADS */}
           <div className="w-full lg:w-1/2 bg-white rounded-xl p-4">
-            <h2 className="text-title-xl mb-4 text-center lg:ml-8 lg:text-left">
-              GDG Los Angeles
+            <h2 className="text-title-xl text-black mt-2 mb-4 text-center lg:ml-8 lg:text-left">
+              GDG Leads
             </h2>
             <div className="flex flex-col items-center">
               {leads.map((lead, index) => (
