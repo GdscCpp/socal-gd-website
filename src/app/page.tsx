@@ -1,8 +1,8 @@
 "use client";
 
-import End from "./home-page/End";
-import Header from "./home-page/Header";
-import Middle from "./home-page/Middle";
+import End from "@/components/homepage/End";
+import Header from "@/components/homepage/Header";
+import Middle from "../components/homepage/Middle";
 
 export default function Page() {
   return (

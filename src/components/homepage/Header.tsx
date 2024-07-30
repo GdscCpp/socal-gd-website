@@ -1,6 +1,6 @@
 import Button, { BUTTON_VARIANTS } from "@/components/input/Button";
 import Image from "next/image";
-import Card from "./components/Card-Header";
+import Card from "../../components/homepage/Card-Header";
 
 export default function Header() {
   const cards = [

@@ -1,6 +1,5 @@
 import Image from "next/image";
-import LeadCard from "../components/Card-Lead";
-// Assume this is the path to the LeadCard component
+import LeadCard from "./LeadCard";
 
 export default function FindGroup() {
   const leads = [
@@ -38,7 +37,7 @@ export default function FindGroup() {
         <div className="flex flex-col lg:flex-row w-full gap-8">
           {/* CITY MAP */}
           <div className="w-full h-96 lg:h-auto lg:w-1/2 bg-white rounded-xl p-4 relative overflow-hidden">
-            {/* Map Image */}
+            {/* MAP IMAGE */}
             <Image
               src="/images/map-section.png"
               alt="Map"
@@ -47,7 +46,7 @@ export default function FindGroup() {
             />
           </div>
 
-          {/* GSDC LEADS */}
+          {/* GSG LEADS */}
           <div className="w-full lg:w-1/2 bg-white rounded-xl p-4">
             <h2 className="text-title-xl text-black mt-2 mb-4 text-center lg:ml-8 lg:text-left">
               GDG Leads

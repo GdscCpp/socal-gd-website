@@ -3,7 +3,7 @@ import Image from "next/image";
 
 interface CardProps {
   header: string;
-  date: string;
+  date: Date;
   photo: string;
   description: string;
   link: string;
@@ -22,7 +22,7 @@ export default function Card({
       <h2 className="text-xl font-bold text-gray-700 mb-2">{header}</h2>
 
       {/* Date */}
-      <p className="text-sm text-gray-500 mb-4">{date}</p>
+      <p className="text-sm text-gray-500 mb-4">{date.toLocaleDateString()}</p>
 
       {/* Photo */}
       <div className="mb-4">
