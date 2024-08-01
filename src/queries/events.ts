@@ -18,7 +18,7 @@ export interface EventData {
  * @param {number} proximity - Proximity within which to fetch events
  * @returns {EventData[]} - Array of events objects returned from the GDSC API.
  */
-export async function getEventsGDSC(
+export async function getGDSCEvents(
   orderByProximity?: boolean,
   proximity?: number,
 ): Promise<EventData[]> {
@@ -56,7 +56,7 @@ export async function getEventsGDSC(
  * @param {number} proximity - Proximity within which to fetch events
  * @returns {EventData[]} - Array of events objects returned from the GDG API.
  */
-export async function getEventsGDG(
+export async function getGDGEvents(
   orderByProximity?: boolean,
   proximity?: number,
 ): Promise<EventData[]> {
