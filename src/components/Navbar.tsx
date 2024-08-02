@@ -52,7 +52,6 @@ export default function Navbar() {
             >
               Pathways
               <Image
-                className=""
                 src={"/images/arrow-down.png"}
                 alt={"arrow"}
                 width={30}
