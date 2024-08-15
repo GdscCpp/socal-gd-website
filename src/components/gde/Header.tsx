@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <div className="flex flex-row gap-x-10">
+    <div className="flex lg:flex-row sm:flex-col gap-x-10 gap-y-10">
       <div className="flex flex-col">
-        <h1 className="font-bold sm:text-center lg:text-left text-heading-xl text-nowrap">
+        <h1 className="font-bold sm:text-center lg:text-left text-heading-xl lg:text-nowrap">
           Google Developer Experts
         </h1>
         <h2 className="sm:text-center lg:text-left text-heading-lg">
