@@ -1,5 +1,10 @@
+import { Metadata } from "next";
 import Header from "../../components/wtm/Header";
 import Middle from "../../components/wtm/Middle";
+
+export const metadata: Metadata = {
+  title: "Socal GD | WTM",
+};
 
 export default function Page() {
   return (

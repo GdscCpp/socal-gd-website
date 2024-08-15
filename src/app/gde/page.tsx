@@ -1,5 +1,10 @@
+import { Metadata } from "next";
 import Header from "../../components/gde/Header";
 import Middle from "../../components/gde/Middle";
+
+export const metadata: Metadata = {
+  title: "Socal GD | GDE",
+};
 
 export default function Page() {
   return (
