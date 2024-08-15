@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Card } from "../../components/homepage/Card-End";
+import { Card } from "./Card-End";
 
 const cities = ["OC", "SD", "LA"];
 

@@ -1,4 +1,3 @@
-import Button, { BUTTON_VARIANTS } from "@/components/input/Button";
 import Image from "next/image";
 import headerImg from "../../../public/images/google-gdg-header.png";
 
