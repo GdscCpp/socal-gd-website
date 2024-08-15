@@ -1,61 +1,46 @@
-import Image from "next/image";
+import LeadCard from "../gdg/LeadCard";
+const ambassadors = [
+  {
+    name: "John Doe",
+    city: "Los Angeles",
+    avatarSrc: "/images/test-avatar.png",
+  },
+  {
+    name: "Jane Smith",
+    city: "San Francisco",
+    avatarSrc: "/images/test-avatar.png",
+  },
+  {
+    name: "Alice Johnson",
+    city: "New York",
+    avatarSrc: "/images/test-avatar.png",
+  },
+  {
+    name: "Bob Wilson",
+    city: "Chicago",
+    avatarSrc: "/images/test-avatar.png",
+  },
+];
+
 export default function Middle() {
   return (
-    <div className="bg-dark-400 py-8 md:py-4 lg:py-1 relative">
-      <div className="container mt-3 mb-8 mx-auto px-24 text-heading-md flex items-center justify-center min-h-[100px]">
-        <h2 className="text-center  text-white">Bio</h2>
+    <div className="flex flex-col gap-y-10 justify-center items-center">
+      <h2 className="text-heading-lg  text-center">About</h2>
+      <div className="flex flex-col bg-white rounded-xl text-dark-400 text-center w-fit justify-center items-center p-4">
+        <p>
+          Google&apos;s Women Techmakers program provides visibility, community,
+          and resources for women in technology.
+        </p>
       </div>
-      <div className="container mx-auto px-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-8 bg-white rounded-xl shadow-lg text-black text-left">
-            <h3 className="text-2xl font-semibold mb-4">Bio</h3>
-            <p className="text-lg leading-relaxed">
-              Women Tech Makers is a global program by Google supporting and
-              celebrating women in technology. It empowers women through
-              community events, workshops, and mentorship opportunities.
-            </p>
-          </div>
-          <div className="p-8 bg-white rounded-xl shadow-lg text-black text-left">
-            <h3 className="text-2xl font-semibold mb-4">Tech</h3>
-            <ul className="list-disc pl-5 text-lg leading-relaxed">
-              <li>Support, resources, community</li>
-              <li>Software</li>
-              <li>Mobile</li>
-              <li>Web</li>
-              <li>Cloud</li>
-              <li>Machine learning</li>
-              <li>Data science</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-dark-400 py-8 md:py-4 lg:py-1 relative">
-        <div className="container mt-3 mb-8 mx-auto px-24 text-heading-md flex items-center justify-center min-h-[100px]">
-          <h2 className="text-center  text-white">Information</h2>
-        </div>
-        <div className="container mx-auto px-24">
-          <div className="p-8 bg-white rounded-xl shadow-lg text-black text-left flex items-center">
-            <div className="flex-1">
-              <h3 className="text-2xl font-semibold mb-4">Talks</h3>
-              <ul className="list-disc pl-5 text-lg leading-relaxed">
-                <li>Educational sessions</li>
-                <li>Informative updates</li>
-                <li>Interactive Q&A</li>
-                <li>Community engagement</li>
-                <li>Diverse topics</li>
-              </ul>
-            </div>
-            <div className="flex-shrink-0 ml-8">
-              <Image
-                src="/images/google-io.png"
-                width={200}
-                height={200}
-                alt="Information Image"
-                className="rounded-lg"
-              />
-            </div>
-          </div>
+      <h2 className="text-heading-lg text-center">Connect</h2>
+      <div className="w-fit bg-white rounded-xl p-4">
+        <h2 className="text-title-xl text-black mt-2 mb-4 text-center lg:ml-8 lg:text-left">
+          WTM Ambassadors
+        </h2>
+        <div className="flex flex-col items-center">
+          {ambassadors.map((ambassador, index) => (
+            <LeadCard key={index} {...ambassador} />
+          ))}
         </div>
       </div>
     </div>

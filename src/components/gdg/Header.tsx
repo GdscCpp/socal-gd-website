@@ -1,5 +1,5 @@
 import Image from "next/image";
-import headerImg from "../../../public/images/google-gdg-header.png";
+import headerImg from "../../../public/images/gdg-header.png";
 
 export default function Header() {
   return (
