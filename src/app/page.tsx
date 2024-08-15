@@ -6,7 +6,7 @@ import Middle from "../components/home/Middle";
 
 export default function Page() {
   return (
-    <div className="">
+    <div className="bg-dark-400">
       <Header />
       <Middle />
       <End />
