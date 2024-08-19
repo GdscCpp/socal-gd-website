@@ -14,9 +14,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const pathways: Pathway[] = [
-    { name: "Home", href: ROUTES.HOME },
-    { name: "GDG Page", href: ROUTES.GDG },
-    // Add more pathways as needed
+    { name: "GDG", href: ROUTES.GDG },
+    { name: "GDSC", href: ROUTES.GDSC },
+    { name: "WTM", href: ROUTES.WTM },
+    { name: "GDE", href: ROUTES.GDE },
   ];
 
   return (
@@ -39,18 +40,12 @@ export default function Navbar() {
           >
             Home
           </Link>
-          <Link
-            href={ROUTES.GDG}
-            className="text-body-xl hover:text-gray-300 transition-colors duration-200"
-          >
-            GDG Page
-          </Link>
           <div className="relative inline-block text-left">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex justify-center items-center w-full text-body-xl text-white hover:text-gray-300 transition-colors duration-200"
             >
-              Pathways
+              Organizations
               <Image
                 src={"/images/arrow-down.png"}
                 alt={"arrow"}
@@ -62,27 +57,29 @@ export default function Navbar() {
             {isOpen && (
               <div
                 className="
-                  absolute right-0 mt-2 w-[80vw] max-w-md rounded-lg shadow-lg bg-dark-400 
+                  absolute right-0 mt-2 max-w-md rounded-lg shadow-lg bg-dark-400 
                   transform transition-all duration-300 ease-in-out origin-top-right
                   z-50
                 "
               >
-                <div className="p-4 grid grid-cols-2 gap-4">
-                  {pathways.map((pathway) => (
-                    <Link
-                      key={pathway.name}
-                      href={pathway.href}
-                      className="
+                <div className="p-4 flex flex-col">
+                  {pathways.map((pathway, index) => (
+                    <div className="hover:bg-4cg-1 p-1 rounded-lg" key={index}>
+                      <Link
+                        key={pathway.name}
+                        href={pathway.href}
+                        className="
                         px-4 py-3 text-sm text-white 
                         bg-dark-300 hover:bg-dark-200 
                         rounded-md transition-colors duration-200
                         flex items-center justify-between
                         transform hover:scale-105
                       "
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <span>{pathway.name}</span>
-                    </Link>
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <span>{pathway.name}</span>
+                      </Link>
+                    </div>
                   ))}
                 </div>
               </div>

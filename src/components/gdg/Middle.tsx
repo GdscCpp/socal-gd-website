@@ -26,7 +26,7 @@ export default function FindGroup() {
   ];
 
   return (
-    <div className="flex flex-col bg-dark-400 p-4 min-h-screen">
+    <div className="flex flex-col bg-dark-400 p-4 min-h-screen justify-center">
       <div className="container mx-auto">
         {/* HEADER */}
         <h1 className="text-heading-md text-white mb-8 text-center font-bold">

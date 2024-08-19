@@ -65,33 +65,17 @@ function InfoSection({
 
 export default function End(): JSX.Element {
   return (
-    <div className="flex flex-col bg-dark-400 p-4 min-h-screen">
+    <div className="flex flex-col bg-dark-400 p-4 min-h-screen justify-center">
       <p className="text-white text-center p-4 sm:p-8 text-heading-md font-bold">
         Get Involved
       </p>
-      <div className="flex flex-col lg:flex-row w-full gap-4 lg:gap-8">
-        {/* BEVY SECTION */}
-        <div className="w-full lg:w-1/2 bg-white rounded-xl p-4 overflow-hidden">
-          <h2 className="text-xl font-semibold mb-4">Upcoming events</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <Card {...sampleCardProps} />
-            <Card {...sampleCardProps} />
-            <Card {...sampleCardProps} />
-            <Card {...sampleCardProps} />
-          </div>
-        </div>
-        {/* PURPOSE | GOALS COL */}
-        <div className="flex flex-col w-full lg:w-1/2 gap-4 lg:gap-8">
-          <InfoSection
-            title="About Events"
-            items={aboutEvents}
-            icon={FaPeopleGroup}
-          />
-          <InfoSection
-            title="Social Events"
-            items={socialEvents}
-            icon={GiStairsGoal}
-          />
+      {/* BEVY SECTION */}
+      <div className=" flex flex-col w-full items-center  justify-center">
+        <div className="grid lg:grid-cols-2 gap-y-10 bg-white rounded-xl p-10 gap-x-10">
+          <Card {...sampleCardProps} />
+          <Card {...sampleCardProps} />
+          <Card {...sampleCardProps} />
+          <Card {...sampleCardProps} />
         </div>
       </div>
     </div>

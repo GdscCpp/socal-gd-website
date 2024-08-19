@@ -7,7 +7,7 @@ export default function Header() {
     <div className="flex lg:flex-row sm:flex-col gap-x-10 gap-y-10">
       <div className="flex flex-col">
         <h1 className="font-bold sm:text-center lg:text-left text-heading-xl lg:text-nowrap">
-          Women Tech Makers
+          Google Developer Experts
         </h1>
         <h2 className="sm:text-center lg:text-left text-heading-lg">
           Southern California
@@ -17,7 +17,7 @@ export default function Header() {
         <Button
           className="h-fit"
           variant={BUTTON_VARIANTS.GRADIENT_1_SM}
-          label="Becom a WTM"
+          label="Becom a GDE"
           type="button"
         />
       </div>
