@@ -3,7 +3,9 @@ export interface EventData {
   id: number;
   title: string;
   description: string;
-  picture: object;
+  picture: {
+    url: string;
+  };
   city: string;
   date: Date;
   eventType: string;
