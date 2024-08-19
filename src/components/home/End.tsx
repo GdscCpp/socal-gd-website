@@ -29,7 +29,7 @@ export default function End() {
           <div className="w-full md:w-1/3 bg-white p-4 m-2 rounded-xl flex items-center justify-center">
             <div className="relative w-full h-48 md:h-64">
               <Image
-                src="/images/googleball.png"
+                src="/images/google-ball.png"
                 layout="fill"
                 objectFit="contain"
                 alt="Google ball"
