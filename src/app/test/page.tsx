@@ -2,7 +2,6 @@
 
 import Avatar from "@/components/Avatar";
 import Chip from "@/components/Chip";
-import GoogleMapsBox from "@/components/GoogleMapsBox";
 import Tooltip from "@/components/Tooltip";
 import Button from "@/components/input/Button";
 import Checkbox from "@/components/input/Checkbox";
@@ -26,9 +25,6 @@ export default function Page() {
       <Avatar src="https://avatars.githubusercontent.com/u/472312" alt="test" />
       <Chip label="test" />
       <Tooltip label="test" description="Test description." />
-      <GoogleMapsBox
-        address={"1245 N Grand Ave, Walnut, CA 91789"}
-      ></GoogleMapsBox>
     </div>
   );
 }
