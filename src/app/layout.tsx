@@ -4,9 +4,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import { FirebaseAppProvider } from "reactfire";
-import { app } from "@/firebase/firebaseConfig";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,16 +17,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <FirebaseAppProvider firebaseApp={app}>
-      <html lang="en">
-        <body className={`${inter.className} bg-dark-400 w-full`}>
-          <div className="px-[140px] bg-dark-400">
-            <Navbar />
-            {children}
-            <Footer />
-          </div>
-        </body>
-      </html>
-    </FirebaseAppProvider>
+    <html lang="en">
+      <body className={`${inter.className} bg-dark-400 w-full`}>
+        <div className="px-[140px] bg-dark-400">
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
+      </body>
+    </html>
   );
 }
