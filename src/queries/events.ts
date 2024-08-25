@@ -3,7 +3,9 @@ export interface EventData {
   id: number;
   title: string;
   description: string;
-  picture: object;
+  picture: {
+    url: string;
+  };
   city: string;
   date: Date;
   eventType: string;
@@ -67,7 +69,7 @@ export async function getGDGEvents(
   if (jsonResponse["results"].length == 0) {
     throw new Error("Not found.");
   }
-
+  console.log(jsonResponse["results"][8]);
   const events: Array<EventData> = jsonResponse["results"].map(
     (result: any) => {
       const event: EventData = {

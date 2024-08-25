@@ -25,7 +25,7 @@ export default function Middle() {
         <div className="bg-white rounded-3xl h-40 "></div>
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-[160%]">
           <Image
-            src="/images/googlecomputer1.png"
+            src="/images/google-computer.png"
             alt="Computer"
             layout="fill"
             objectFit="contain"
@@ -57,7 +57,7 @@ export default function Middle() {
           <p className="text-heading-md mb-2">Featured Events</p>
           <div className="relative h-60 md:h-80">
             <Image
-              src="/images/googleevent.png"
+              src="/images/google-event.png"
               alt="logo"
               layout="fill"
               objectFit="contain"
