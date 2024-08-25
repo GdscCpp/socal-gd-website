@@ -3,6 +3,7 @@
 import LeadCard from "../gdg/LeadCard";
 import { useFirestore, useFirestoreDocData } from "reactfire";
 import { doc } from "firebase/firestore";
+import { useState } from "react";
 
 const dummyExperts = [
   {
@@ -28,9 +29,9 @@ const dummyExperts = [
 ];
 
 export default function Middle() {
-  const ref = doc(useFirestore(), "experts", "1VzhUeQtXeOuIWpfn8IK");
+  const firestore = useFirestore();
+  const ref = doc(firestore, "experts", "1VzhUeQtXeOuIWpfn8IK");
   const { status, data } = useFirestoreDocData(ref);
-  console.log("data: " + data);
 
   return (
     <div className="flex flex-col gap-y-10 justify-center items-center">
@@ -48,11 +49,8 @@ export default function Middle() {
         <h2 className="text-title-xl text-black mt-2 mb-4 text-center">
           Google Developer Experts
         </h2>
-        {/**dummyExperts.map((expert, index) => (
-            <LeadCard key={index} {...expert} />
-          ))*/}
         <div className="flex flex-col items-center">
-          {status === "loading" && <p>Loading...</p>}
+          {status == "loading" ? <>Loading...</> : <></>}
           {status === "success" && data && (
             <LeadCard
               name={data.name}

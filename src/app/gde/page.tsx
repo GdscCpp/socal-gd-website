@@ -10,7 +10,7 @@ import {
   useFirebaseApp,
 } from "reactfire";
 import { getFirestore } from "firebase/firestore";
-import { app } from "@/firebase/firebaseConfig";
+import { firebaseConfig } from "@/firebase/firebaseConfig";
 
 /**
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 function Page() {
   return (
-    <FirebaseAppProvider firebaseApp={app}>
+    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
       <FirestoreComponent />
     </FirebaseAppProvider>
   );
@@ -28,9 +28,6 @@ function Page() {
 
 function FirestoreComponent() {
   const firestoreInstance = getFirestore(useFirebaseApp(), "development");
-  firestoreInstance
-    ? console.log("Firestore instance is true: " + firestoreInstance)
-    : console.log("Firestore instance not found");
   return (
     <FirestoreProvider sdk={firestoreInstance}>
       <div className="bg-dark-400 text-white flex flex-col gap-x-10 gap-y-10 justify-center items-center">
