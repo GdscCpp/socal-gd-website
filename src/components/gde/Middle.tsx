@@ -1,37 +1,40 @@
 "use client";
 
 import LeadCard from "../gdg/LeadCard";
-import { useFirestore, useFirestoreDocData } from "reactfire";
+import { useFirestore, useFirestoreDocDataOnce } from "reactfire";
 import { doc } from "firebase/firestore";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const dummyExperts = [
-  {
-    name: "John Doe",
-    city: "Los Angeles",
-    avatarSrc: "/images/test-avatar.png",
-  },
-  {
-    name: "Jane Smith",
-    city: "San Francisco",
-    avatarSrc: "/images/test-avatar.png",
-  },
-  {
-    name: "Alice Johnson",
-    city: "New York",
-    avatarSrc: "/images/test-avatar.png",
-  },
-  {
-    name: "Bob Wilson",
-    city: "Chicago",
-    avatarSrc: "/images/test-avatar.png",
-  },
-];
+type ExpertData = {
+  name: string;
+  city: string;
+  avatarSrc: string;
+};
 
 export default function Middle() {
+  const [expertData, setExpertData] = useState<ExpertData>({
+    name: "...",
+    city: "...",
+    avatarSrc: "...",
+  });
+
   const firestore = useFirestore();
   const ref = doc(firestore, "experts", "1VzhUeQtXeOuIWpfn8IK");
-  const { status, data } = useFirestoreDocData(ref);
+  const { status, data, error } = useFirestoreDocDataOnce(ref);
+
+  useEffect(() => {
+    if (status === "success" && data) {
+      setExpertData({
+        name: data.name,
+        city: data.city,
+        avatarSrc: data.avatarSrc,
+      });
+    }
+  }, [status, data, error]);
+
+  if (status === "error") {
+    return <div>Error: {error?.message}</div>;
+  }
 
   return (
     <div className="flex flex-col gap-y-10 justify-center items-center">
@@ -50,13 +53,14 @@ export default function Middle() {
           Google Developer Experts
         </h2>
         <div className="flex flex-col items-center">
-          {status == "loading" ? <>Loading...</> : <></>}
-          {status === "success" && data && (
+          {expertData ? (
             <LeadCard
-              name={data.name}
-              city={data.city}
-              avatarSrc={data.avatarSrc}
+              name={expertData.name}
+              city={expertData.city}
+              avatarSrc={expertData.avatarSrc}
             />
+          ) : (
+            <p>Loading...</p>
           )}
         </div>
       </div>
