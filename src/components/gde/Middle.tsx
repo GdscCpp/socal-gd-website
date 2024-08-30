@@ -1,28 +1,41 @@
+"use client";
+
 import LeadCard from "../gdg/LeadCard";
-const experts = [
-  {
-    name: "John Doe",
-    city: "Los Angeles",
-    avatarSrc: "/images/test-avatar.png",
-  },
-  {
-    name: "Jane Smith",
-    city: "San Francisco",
-    avatarSrc: "/images/test-avatar.png",
-  },
-  {
-    name: "Alice Johnson",
-    city: "New York",
-    avatarSrc: "/images/test-avatar.png",
-  },
-  {
-    name: "Bob Wilson",
-    city: "Chicago",
-    avatarSrc: "/images/test-avatar.png",
-  },
-];
+import { useFirestore, useFirestoreDocDataOnce } from "reactfire";
+import { doc } from "firebase/firestore";
+import { useState, useEffect } from "react";
+
+type ExpertData = {
+  name: string;
+  city: string;
+  avatarSrc: string;
+};
 
 export default function Middle() {
+  const [expertData, setExpertData] = useState<ExpertData>({
+    name: "...",
+    city: "...",
+    avatarSrc: "...",
+  });
+
+  const firestore = useFirestore();
+  const ref = doc(firestore, "experts", "1VzhUeQtXeOuIWpfn8IK");
+  const { status, data, error } = useFirestoreDocDataOnce(ref);
+
+  useEffect(() => {
+    if (status === "success" && data) {
+      setExpertData({
+        name: data.name,
+        city: data.city,
+        avatarSrc: data.avatarSrc,
+      });
+    }
+  }, [status, data, error]);
+
+  if (status === "error") {
+    return <div>Error: {error?.message}</div>;
+  }
+
   return (
     <div className="flex flex-col gap-y-10 justify-center items-center">
       <h2 className="text-heading-lg  text-center">About</h2>
@@ -40,9 +53,15 @@ export default function Middle() {
           Google Developer Experts
         </h2>
         <div className="flex flex-col items-center">
-          {experts.map((expert, index) => (
-            <LeadCard key={index} {...expert} />
-          ))}
+          {expertData ? (
+            <LeadCard
+              name={expertData.name}
+              city={expertData.city}
+              avatarSrc={expertData.avatarSrc}
+            />
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
       </div>
     </div>
