@@ -1,29 +1,38 @@
+"use client";
+
 import Image from "next/image";
 import LeadCard from "./LeadCard";
+import { useFirestore, useFirestoreCollectionData } from "reactfire";
+import { collection } from "firebase/firestore";
+import { useState, useEffect } from "react";
 
-export default function FindGroup() {
-  const leads = [
-    {
-      name: "John Doe",
-      city: "Los Angeles",
-      avatarSrc: "/images/test-avatar.png",
-    },
-    {
-      name: "Jane Smith",
-      city: "San Francisco",
-      avatarSrc: "/images/test-avatar.png",
-    },
-    {
-      name: "Alice Johnson",
-      city: "New York",
-      avatarSrc: "/images/test-avatar.png",
-    },
-    {
-      name: "Bob Wilson",
-      city: "Chicago",
-      avatarSrc: "/images/test-avatar.png",
-    },
-  ];
+type LeadData = {
+  name: string;
+  city: string;
+  avatarSrc: string;
+};
+
+export default function Middle() {
+  const firestore = useFirestore();
+  const leadsCollection = collection(firestore, "gdsc-leads");
+
+  const { data: leadsDocs } = useFirestoreCollectionData(leadsCollection, {
+    idField: "id",
+  });
+
+  const [leads, setLeads] = useState<LeadData[]>([]);
+
+  useEffect(() => {
+    if (leadsDocs) {
+      const leadDataArray: LeadData[] = leadsDocs.map((doc) => ({
+        name: doc.name,
+        city: doc.city,
+        avatarSrc: doc.avatarSrc,
+      }));
+
+      setLeads(leadDataArray);
+    }
+  }, [leadsDocs]);
 
   return (
     <div className="flex flex-col bg-dark-400 p-4 min-h-screen justify-center">
