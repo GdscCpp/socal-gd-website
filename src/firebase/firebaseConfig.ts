@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-const config64 = process.env.NEXT_DEV_FIREBASE_CONFIG;
+const config64 = process.env.NEXT_PUBLIC_FIREBASE_CONFIG;
 if (!config64) {
   throw new Error("Firebase config not found");
 }
