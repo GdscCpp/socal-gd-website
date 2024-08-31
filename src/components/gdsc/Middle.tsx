@@ -14,7 +14,7 @@ type LeadData = {
 
 export default function Middle() {
   const firestore = useFirestore();
-  const leadsCollection = collection(firestore, "gdg-leads");
+  const leadsCollection = collection(firestore, "gdsc-leads");
 
   const { data: leadsDocs } = useFirestoreCollectionData(leadsCollection, {
     idField: "id",
