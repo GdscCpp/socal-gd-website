@@ -1,6 +1,36 @@
+"use client";
+
+import { SetStateAction, useState } from "react";
 import Tab, { ORIENTATION } from "../Tab";
 
 export default function Form() {
+  const [selectedTab, setSelectedTab] = useState("");
+
+  const handleTabClick = (tab: SetStateAction<string>) => {
+    setSelectedTab(tab === selectedTab ? "" : tab);
+  };
+
+  const isDisabled = (field: string) => {
+    if (selectedTab === "GDG" || selectedTab === "GDSC") {
+      return ["bio", "contact", "topics"].includes(field);
+    }
+    if (selectedTab === "WTM" || selectedTab === "GDE") {
+      return [
+        "chapterName",
+        "chapterUniversity",
+        "bevyLink",
+        "socialLinks",
+      ].includes(field);
+    }
+    return false;
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // Handle form submission logic here
+    console.log("Form submitted");
+  };
+
   return (
     <div className="flex flex-col md:flex-row gap-8 p-4 md:p-8 max-w-6xl mx-auto w-full">
       {/* FAQ Section */}
@@ -14,26 +44,42 @@ export default function Form() {
               How Long For Approval?
             </h4>
             <p className="text-body-lg">
-              Typically it takes xyz days for our team to review your
-              information and add you to our system
+              Typically, it takes 5-7 business days for our team to review your
+              information and add you to our system.
             </p>
             <hr className="border-t border-dark-400 w-full mt-2" />
           </div>
           <div>
             <h4 className="font-semibold text-body-xl">
-              What Happens Next After?
+              What Happens Next After Approval?
             </h4>
-            <p className="text-body-lg">lorem ipsum</p>
+            <p className="text-body-lg">
+              Once approved, youll receive a welcome email with further
+              instructions on how to access our resources and participate in our
+              community events.
+            </p>
             <hr className="border-t border-dark-400 w-full mt-2" />
           </div>
           <div>
-            <h4 className="font-semibold text-body-xl">ETC?</h4>
-            <p className="text-body-lg">lorem ipsum</p>
+            <h4 className="font-semibold text-body-xl">
+              Can I Join Multiple Organizations?
+            </h4>
+            <p className="text-body-lg">
+              Yes, you can be part of multiple organizations. However, each
+              organization may have its own specific requirements and
+              commitments.
+            </p>
             <hr className="border-t border-dark-400 w-full mt-2" />
           </div>
           <div>
-            <h4 className="font-semibold text-body-xl">ETC??</h4>
-            <p className="text-body-lg">lorem ipsum</p>
+            <h4 className="font-semibold text-body-xl">
+              How Often Are Events Held?
+            </h4>
+            <p className="text-body-lg">
+              Event frequency varies by organization and chapter. Typically,
+              most chapters aim to host at least one event per month, but this
+              can vary based on the chapters size and resources.
+            </p>
             <hr className="border-t border-dark-400 w-full mt-2" />
           </div>
         </div>
@@ -43,40 +89,28 @@ export default function Form() {
       <div className="flex flex-col bg-white text-dark-400 rounded-lg p-6 flex-1 shadow-gradient-button-default">
         <h3 className="font-bold text-title-xl mb-4">Organization Request</h3>
         <hr className="border-t border-black w-full mb-4" />
-        <form className="flex flex-col space-y-4">
+        <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
           <div className="flex flex-wrap gap-8 justify-center">
-            <Tab
-              text="WTM"
-              display={ORIENTATION.HORIZONTAL}
-              rounded={true}
-              style="LIGHT_06"
-            />
-            <Tab
-              text="GDE"
-              display={ORIENTATION.HORIZONTAL}
-              rounded={true}
-              style="LIGHT_06"
-            />
-            <Tab
-              text="GUG"
-              display={ORIENTATION.HORIZONTAL}
-              rounded={true}
-              style="LIGHT_06"
-            />
-            <Tab
-              text="GDSC"
-              display={ORIENTATION.HORIZONTAL}
-              rounded={true}
-              style="LIGHT_06"
-            />
+            {["WTM", "GDE", "GDG", "GDSC"].map((tab) => (
+              <Tab
+                key={tab}
+                text={tab}
+                display={ORIENTATION.HORIZONTAL}
+                rounded={true}
+                style="LIGHT_06"
+                onClick={() => handleTabClick(tab)}
+                active={selectedTab === tab}
+              />
+            ))}
           </div>
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1">
               <label className="text-body-md font-medium mb-1 block">Bio</label>
               <input
                 type="text"
-                className="w-full p-2 border rounded text-body-lg"
+                className={`w-full p-2 border rounded text-body-lg ${isDisabled("bio") ? "bg-gray-200" : ""}`}
                 placeholder="Enter Here"
+                disabled={isDisabled("bio")}
               />
             </div>
             <div className="flex-1">
@@ -85,8 +119,9 @@ export default function Form() {
               </label>
               <input
                 type="text"
-                className="w-full p-2 border rounded text-body-lg"
+                className={`w-full p-2 border rounded text-body-lg ${isDisabled("chapterName") ? "bg-gray-200" : ""}`}
                 placeholder="Enter Here"
+                disabled={isDisabled("chapterName")}
               />
             </div>
           </div>
@@ -97,8 +132,9 @@ export default function Form() {
               </label>
               <input
                 type="text"
-                className="w-full p-2 border rounded text-body-lg"
+                className={`w-full p-2 border rounded text-body-lg ${isDisabled("contact") ? "bg-gray-200" : ""}`}
                 placeholder="Enter Here"
+                disabled={isDisabled("contact")}
               />
             </div>
             <div className="flex-1">
@@ -107,8 +143,9 @@ export default function Form() {
               </label>
               <input
                 type="text"
-                className="w-full p-2 border rounded text-body-lg"
+                className={`w-full p-2 border rounded text-body-lg ${isDisabled("chapterUniversity") ? "bg-gray-200" : ""}`}
                 placeholder="Enter Here"
+                disabled={isDisabled("chapterUniversity")}
               />
             </div>
           </div>
@@ -118,8 +155,9 @@ export default function Form() {
             </label>
             <input
               type="text"
-              className="w-full p-2 border rounded text-body-lg"
+              className={`w-full p-2 border rounded text-body-lg ${isDisabled("topics") ? "bg-gray-200" : ""}`}
               placeholder="Enter Here"
+              disabled={isDisabled("topics")}
             />
           </div>
           <div>
@@ -128,8 +166,9 @@ export default function Form() {
             </label>
             <input
               type="text"
-              className="w-full p-2 border rounded text-body-lg"
+              className={`w-full p-2 border rounded text-body-lg ${isDisabled("bevyLink") ? "bg-gray-200" : ""}`}
               placeholder="Enter Here"
+              disabled={isDisabled("bevyLink")}
             />
           </div>
           <div>
@@ -138,8 +177,9 @@ export default function Form() {
             </label>
             <input
               type="text"
-              className="w-full p-2 border rounded text-body-lg"
+              className={`w-full p-2 border rounded text-body-lg ${isDisabled("socialLinks") ? "bg-gray-200" : ""}`}
               placeholder="Enter Here"
+              disabled={isDisabled("socialLinks")}
             />
           </div>
           <button

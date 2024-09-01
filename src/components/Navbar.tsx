@@ -18,6 +18,7 @@ export default function Navbar() {
     { name: "GDSC", href: ROUTES.GDSC },
     { name: "WTM", href: ROUTES.WTM },
     { name: "GDE", href: ROUTES.GDE },
+    { name: "Register", href: ROUTES.Register },
   ];
 
   return (
