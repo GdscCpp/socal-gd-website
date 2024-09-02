@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   title: "Socal GD | GDE",
 };
 
-export default function Page() {
+function Page() {
   return (
-    <>
-      <div className="bg-dark-400 text-white flex flex-col gap-x-10 gap-y-10 justify-center items-center">
-        <Header />
-        <Middle />
-      </div>
-    </>
+    <div className="bg-dark-400 text-white flex flex-col gap-x-10 gap-y-10 justify-center items-center">
+      <Header />
+      <Middle />
+    </div>
   );
 }
+
+export default Page;

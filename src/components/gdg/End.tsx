@@ -87,13 +87,11 @@ export default function End(): JSX.Element {
       setIsLoading(true);
       try {
         const response = await fetch(`/api/events/${org}?${params.toString()}`);
-        console.log(response);
         if (!response.ok) {
           throw new Error(`ERROR: ${response.status}`);
         }
 
         const data: EventData[] = await response.json();
-        console.log(data);
         setEvents(data);
       } catch (error: any) {
         console.error(error.message);

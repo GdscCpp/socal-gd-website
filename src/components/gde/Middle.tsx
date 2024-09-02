@@ -1,28 +1,34 @@
+"use client";
+
 import LeadCard from "../gdg/LeadCard";
-const experts = [
-  {
-    name: "John Doe",
-    city: "Los Angeles",
-    avatarSrc: "/images/test-avatar.png",
-  },
-  {
-    name: "Jane Smith",
-    city: "San Francisco",
-    avatarSrc: "/images/test-avatar.png",
-  },
-  {
-    name: "Alice Johnson",
-    city: "New York",
-    avatarSrc: "/images/test-avatar.png",
-  },
-  {
-    name: "Bob Wilson",
-    city: "Chicago",
-    avatarSrc: "/images/test-avatar.png",
-  },
-];
+import { useFirestore, useFirestoreCollectionData } from "reactfire";
+import { collection } from "firebase/firestore";
+import { useState, useEffect } from "react";
+
+type ExpertData = {
+  name: string;
+  city: string;
+  avatarSrc: string;
+};
 
 export default function Middle() {
+  const [expertData, setExpertData] = useState<ExpertData[]>([]);
+
+  const firestore = useFirestore();
+  const ref = collection(firestore, "gde-experts");
+  const { data } = useFirestoreCollectionData(ref, { idField: "id" });
+
+  useEffect(() => {
+    if (data) {
+      const expertDataArray: ExpertData[] = data.map((doc) => ({
+        name: doc.name,
+        city: doc.city,
+        avatarSrc: doc.avatarSrc,
+      }));
+      setExpertData(expertDataArray);
+    }
+  }, [data]);
+
   return (
     <div className="flex flex-col gap-y-10 justify-center items-center">
       <h2 className="text-heading-lg  text-center">About</h2>
@@ -40,9 +46,18 @@ export default function Middle() {
           Google Developer Experts
         </h2>
         <div className="flex flex-col items-center">
-          {experts.map((expert, index) => (
-            <LeadCard key={index} {...expert} />
-          ))}
+          {expertData ? (
+            expertData.map((expert, index) => (
+              <LeadCard
+                key={index}
+                name={expert.name}
+                city={expert.city}
+                avatarSrc={expert.avatarSrc}
+              />
+            ))
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
       </div>
     </div>
