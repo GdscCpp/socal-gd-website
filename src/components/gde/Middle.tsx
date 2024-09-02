@@ -20,13 +20,12 @@ export default function Middle() {
 
   useEffect(() => {
     if (data) {
-      setExpertData(
-        data.map((doc: any) => ({
-          name: doc.name,
-          city: doc.city,
-          avatarSrc: doc.avatarSrc,
-        })),
-      );
+      const expertDataArray: ExpertData[] = data.map((doc) => ({
+        name: doc.name,
+        city: doc.city,
+        avatarSrc: doc.avatarSrc,
+      }));
+      setExpertData(expertDataArray);
     }
   }, [data]);
 
