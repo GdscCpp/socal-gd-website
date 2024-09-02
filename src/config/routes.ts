@@ -4,5 +4,5 @@ export enum ROUTES {
   GDG = "/gdg",
   GDE = "/gde",
   WTM = "/wtm",
-  Register = "/register",
+  REGISTER = "/register",
 }

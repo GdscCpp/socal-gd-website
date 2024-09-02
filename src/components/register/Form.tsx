@@ -1,28 +1,27 @@
 "use client";
 
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import Tab, { ORIENTATION } from "../Tab";
 
-export default function Form() {
-  const [selectedTab, setSelectedTab] = useState("");
+const TABS = ["GDSC", "GDG", "WTM", "GDE"] as const;
+type TabType = (typeof TABS)[number];
 
-  const handleTabClick = (tab: SetStateAction<string>) => {
-    setSelectedTab(tab === selectedTab ? "" : tab);
+const DISABLED_FIELDS: Record<TabType, string[]> = {
+  GDSC: ["bio", "contact", "topics"],
+  GDG: ["bio", "contact", "topics"],
+  WTM: ["chapterName", "chapterUniversity", "bevyLink", "socialLinks"],
+  GDE: ["chapterName", "chapterUniversity", "bevyLink", "socialLinks"],
+};
+
+export default function Form() {
+  const [selectedTab, setSelectedTab] = useState<TabType>("GDSC");
+
+  const handleTabClick = (tab: TabType) => {
+    setSelectedTab(tab === selectedTab ? "GDSC" : tab);
   };
 
   const isDisabled = (field: string) => {
-    if (selectedTab === "GDG" || selectedTab === "GDSC") {
-      return ["bio", "contact", "topics"].includes(field);
-    }
-    if (selectedTab === "WTM" || selectedTab === "GDE") {
-      return [
-        "chapterName",
-        "chapterUniversity",
-        "bevyLink",
-        "socialLinks",
-      ].includes(field);
-    }
-    return false;
+    return DISABLED_FIELDS[selectedTab].includes(field);
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -54,7 +53,7 @@ export default function Form() {
               What Happens Next After Approval?
             </h4>
             <p className="text-body-lg">
-              Once approved, youll receive a welcome email with further
+              Once approved, you will receive a welcome email with further
               instructions on how to access our resources and participate in our
               community events.
             </p>
@@ -91,7 +90,7 @@ export default function Form() {
         <hr className="border-t border-black w-full mb-4" />
         <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
           <div className="flex flex-wrap gap-8 justify-center">
-            {["WTM", "GDE", "GDG", "GDSC"].map((tab) => (
+            {TABS.map((tab) => (
               <Tab
                 key={tab}
                 text={tab}
