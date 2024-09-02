@@ -1,20 +1,16 @@
 import TabSvg from "./svgs/TabSvg";
 
-// Later on we can setup the tab children and states for when a tab is selected
-
-// Orientation
 export enum ORIENTATION {
   HORIZONTAL = "flex-row p-3",
   VERTICAL = "flex-col p-3",
 }
 
-// Style Templates for easy use
 interface TabStyle {
   bgColor: string;
   textColor: string;
   iconColor: string;
 }
-// Creates object to hold each TabStyle attribute
+
 const tabStyles: { [key: string]: TabStyle } = {
   LIGHT_NAV: {
     bgColor: "bg-white",
@@ -102,49 +98,38 @@ const tabStyles: { [key: string]: TabStyle } = {
     iconColor: "#FECB33",
   },
 };
-// General Tab Properties
+
 interface TabProps {
   text: string;
   className?: string;
   display: ORIENTATION;
   rounded: boolean;
   style: keyof typeof tabStyles;
+  onClick?: () => void;
+  active?: boolean;
 }
 
-function Tab({ text, className, display, rounded, style }: TabProps) {
-  // Pulls the attributes from selected TabStyle object to use within the tab
+function Tab({
+  text,
+  className,
+  display,
+  rounded,
+  style,
+  onClick,
+  active,
+}: TabProps) {
   const { bgColor, textColor, iconColor } = tabStyles[style];
-  let borderRadius = "rounded";
-  return rounded ? (
-    // Rounded Tab Corners
-    <div>
-      <button
-        className={`flex ${display} items-center ${borderRadius} ${className} text-body-lg ${bgColor} ${textColor}`}
-      >
-        <TabSvg
-          width={14}
-          height={14}
-          display={display}
-          fill={`${iconColor}`} // not working
-        />
-        <p className="overflow-hidden">{text}</p>
-      </button>
-    </div>
-  ) : (
-    // Sharp Tab Corners
-    <div>
-      <button
-        className={`flex ${display} items-center ${className} text-body-lg ${bgColor} ${textColor}`}
-      >
-        <TabSvg
-          width={14}
-          height={14}
-          display={display}
-          fill={`${iconColor}`} // not working
-        />
-        <p className="overflow-hidden">{text}</p>
-      </button>
-    </div>
+  const borderRadius = rounded ? "rounded" : "";
+  const activeClass = active ? "opacity-100" : "opacity-50";
+
+  return (
+    <button
+      className={`flex ${display} items-center ${borderRadius} ${className} text-body-lg ${bgColor} ${textColor} ${activeClass} transition-opacity duration-300`}
+      onClick={onClick}
+    >
+      <TabSvg width={14} height={14} display={display} fill={`${iconColor}`} />
+      <span className="overflow-hidden ml-2">{text}</span>
+    </button>
   );
 }
 
