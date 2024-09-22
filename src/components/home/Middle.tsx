@@ -1,32 +1,33 @@
 import Image from "next/image";
+import { FaCalendarAlt, FaCode, FaUsers } from "react-icons/fa";
 
 export default function Middle() {
   return (
-    <div className="flex flex-col items-center justify-center bg-dark-400 text-center px-4 md:px-8">
+    <div className="flex flex-col items-center justify-center bg-dark-400 w-full text-center px-4 md:px-8">
       {/* SECTION CHIP */}
-      <div className="w-28 relative rounded-3xl p-[2px] bg-gradient-to-r from-[#fbbc04] via-[#f46930] to-[#eb4235] mt-6">
-        <div className="rounded-full bg-dark-400 px-4 py-1">
-          <p className="text-title-md bg-gradient-to-r from-[#fbbc04] via-[#f46930] to-[#eb4235] text-transparent bg-clip-text">
+      <div className="w-24 sm:w-28 relative rounded-3xl p-[2px] bg-2cg-2 mt-4 sm:mt-6">
+        <div className="rounded-full bg-dark-400 px-3 sm:px-4 py-1">
+          <p className="text-body-lg sm:text-title-md bg-2cg-2 text-transparent bg-clip-text">
             About
           </p>
         </div>
       </div>
 
       {/* HEADER + DESCRIPTION */}
-      <div className="text-heading-lg md:text-heading-xl mt-8 mb-2 text-white">
-        About Us
+      <div className="text-heading-md sm:text-heading-lg md:text-heading-xl mt-6 sm:mt-8 mb-2 text-white">
+        About DevFest 2024
       </div>
-      <div className="text-heading-sm md:text-heading-md mb-20 text-white">
-        Workshops, guest speakers, networking
+      <div className="text-title-lg sm:text-title-xl md:text-heading-md mb-12 sm:mb-16 md:mb-20 text-white">
+        Hackathon, Guest Speakers, Networking
       </div>
 
       {/* IMAGE + BOX */}
-      <div className="relative w-full max-w-4xl mb-20">
-        <div className="bg-white rounded-3xl h-40 "></div>
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-[160%]">
+      <div className="relative w-full max-w-4xl mb-12 sm:mb-16 md:mb-20">
+        <div className="bg-white rounded-3xl h-32 sm:h-36 md:h-40"></div>
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-[140%] sm:h-[150%] md:h-[160%]">
           <Image
             src="/images/google-computer.png"
-            alt="Computer"
+            alt="DevFest 2024"
             layout="fill"
             objectFit="contain"
             objectPosition="bottom"
@@ -35,56 +36,81 @@ export default function Middle() {
       </div>
 
       {/* Activity Section */}
-      <div className="w-28 relative rounded-3xl p-[2px] bg-gradient-to-r from-[#fbbc04] via-[#f46930] to-[#eb4235] mt-12">
-        <div className="rounded-full bg-dark-400 px-4 py-1">
-          <p className="text-title-md bg-gradient-to-r from-[#fbbc04] via-[#f46930] to-[#eb4235] text-transparent bg-clip-text">
-            Activity
+      <div className="w-24 sm:w-28 relative rounded-3xl p-[2px] bg-2cg-2 mt-8 sm:mt-10 md:mt-12">
+        <div className="rounded-full bg-dark-400 px-3 sm:px-4 py-1">
+          <p className="text-body-lg sm:text-title-md bg-2cg-2 text-transparent bg-clip-text">
+            Activities
           </p>
         </div>
       </div>
 
       {/* HEADER + DESCRIPTION */}
-      <div className="text-heading-lg md:text-heading-xl mt-8 mb-2 text-white">
-        See What We Have Been Up To
+      <div className="text-heading-md sm:text-heading-lg md:text-heading-xl mt-6 sm:mt-8 mb-2 text-white">
+        Whats Happening at DevFest 2024
       </div>
-      <div className="text-heading-sm md:text-heading-md mb-8 text-white">
-        Discover the events we participate and host.
+      <div className="text-title-lg sm:text-title-xl md:text-heading-md mb-6 sm:mb-8 text-white">
+        Discover the exciting events and activities we have planned.
       </div>
 
-      <div className="flex flex-col md:flex-row gap-8 w-full max-w-6xl">
+      <div className="flex flex-col md:flex-row gap-6 sm:gap-8 w-full max-w-6xl">
         {/* FIRST COL */}
-        <div className="flex-1 bg-white rounded-xl p-8">
-          <p className="text-heading-md mb-2">Featured Events</p>
-          <div className="relative h-60 md:h-80">
+        <div className="flex-1 bg-white rounded-xl p-6 sm:p-8 shadow-lg transition-all duration-300 hover:shadow-xl">
+          <div className="flex justify-center mb-4 sm:mb-6">
+            <FaCode className="text-blue-500" size={36} />
+          </div>
+          <p className="text-title-xl mt-6 sm:text-heading-lg mb-4 sm:mb-6 text-dark-400">
+            Hackathon
+          </p>
+          <div className="relative h-48 sm:h-56 md:h-64 lg:h-80 rounded-lg overflow-hidden">
             <Image
               src="/images/google-event.png"
-              alt="logo"
+              alt="Hackathon"
               layout="fill"
-              objectFit="contain"
+              objectFit="cover"
             />
           </div>
         </div>
 
-        {/* SECOUND COL */}
-        <div className="flex-1 flex flex-col gap-8">
-          <div className="bg-white rounded-xl p-8 text-center">
-            <p className="text-heading-md mb-4">What We Do</p>
-            <p className="text-body-lg">
-              Meet and learn with other budding developers and build solutions
-              for local businesses and communities with Google technology.
+        {/* SECOND COL */}
+        <div className="flex-1 flex flex-col gap-6 sm:gap-8">
+          <div className="bg-white rounded-xl p-6 sm:p-8 text-center">
+            <div className="flex justify-center mb-4 sm:mb-6">
+              <FaUsers className="text-green-500" size={28} />
+            </div>
+            <p className="text-title-xl sm:text-heading-md mb-4 sm:mb-6 text-dark-400">
+              What We Offer
+            </p>
+            <p className="text-body-lg sm:text-body-xl text-dark-300">
+              Join us for a week-long hackathon, learn from industry
+              professionals, and network with fellow developers. Create
+              impactful solutions and win exciting prizes!
             </p>
           </div>
           {/* STAT ROW */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-4">
             {/* BOX 1 */}
-            <div className="bg-white rounded-xl p-4 md:h-44 lg:h-48 text-center">
-              <p className="text-heading-md mb-2 mt-4">2100+</p>
-              <p className="text-body-md">College and university chapters+</p>
+            <div className="bg-white rounded-xl p-5 sm:p-6 text-center shadow-lg transition-all duration-300 hover:shadow-xl">
+              <div className="flex justify-center mb-3 sm:mb-4">
+                <FaUsers className="text-purple-500" size={36} />
+              </div>
+              <p className="text-title-xl sm:text-heading-md mb-3 sm:mb-4 text-dark-400">
+                300
+              </p>
+              <p className="text-body-md sm:text-body-lg text-dark-300">
+                Participants Expected
+              </p>
             </div>
             {/* BOX 2 */}
-            <div className="bg-white rounded-xl p-4 md:h-44 lg:h-48 text-center">
-              <p className="text-heading-md mb-2 mt-4">100</p>
-              <p className="text-body-md">Countries Participating</p>
+            <div className="bg-white rounded-xl p-5 sm:p-6 text-center shadow-lg transition-all duration-300 hover:shadow-xl">
+              <div className="flex justify-center mb-3 sm:mb-4">
+                <FaCalendarAlt className="text-red-500" size={36} />
+              </div>
+              <p className="text-title-xl sm:text-heading-md mb-3 sm:mb-4 text-dark-400">
+                7 Day
+              </p>
+              <p className="text-body-md sm:text-body-lg text-dark-300">
+                Of Collaborative Hacking
+              </p>
             </div>
           </div>
         </div>
