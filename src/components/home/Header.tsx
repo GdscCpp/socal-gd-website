@@ -1,29 +1,30 @@
 import Button, { BUTTON_VARIANTS } from "@/components/input/Button";
 import Image from "next/image";
+import { FaGraduationCap, FaLightbulb, FaUsers } from "react-icons/fa";
 import Card from "../../components/home/Card-Header";
 
 export default function Header() {
   const cards = [
     {
-      title: "Connect",
-      description: "Network with innovators.",
-      iconSrc: "/images/google-shapes.png",
-      linkText: "Learn More >",
-      linkHref: "#connect",
+      title: "Innovate",
+      description: "Create cutting-edge solutions.",
+      icon: <FaLightbulb className="text-blue-500" size={60} />,
+      linkText: "Join the Challenge >",
+      linkHref: "#innovate",
     },
     {
       title: "Learn",
-      description: "Expand your tech skills.",
-      iconSrc: "/images/google-shapes.png",
-      linkText: "Learn More >",
+      description: "Expand your tech expertise.",
+      icon: <FaGraduationCap className="text-green-500" size={60} />,
+      linkText: "Explore Workshops >",
       linkHref: "#learn",
     },
     {
-      title: "Build",
-      description: "Create impactful solutions.",
-      iconSrc: "/images/google-shapes.png",
-      linkText: "Learn More >",
-      linkHref: "#build",
+      title: "Network",
+      description: "Connect with tech enthusiasts.",
+      icon: <FaUsers className="text-red-500" size={60} />,
+      linkText: "Meet Developers >",
+      linkHref: "#network",
     },
   ];
 
@@ -36,20 +37,23 @@ export default function Header() {
         <div className="ml-20 mr-20">
           <div className="flex flex-col md:flex-row items-center justify-between">
             {/* TEXT AND BUTTON SECTION */}
-            <div className="text-center md:text-left mb-8 md:mb-0 z-10">
+            <div className="text-center md:text-left mb-8 md:mb-0 z-10 w-full md:w-auto">
               <h1 className="text-heading-lg lg:text-heading-xl font-bold mb-2">
-                Google For Developers
+                DevFest 2024
               </h1>
               <h2 className="text-title-xl md:text-heading-md lg:text-heading-lg mb-6">
-                Southern California
+                GDG Cal Poly Pomona
               </h2>
-              <div className="sm:ml-20 md:ml-0 lg:ml-96">
-                <Button
-                  className="w-38 flex items-center justify-items-end md:w-auto text-body-lg md:text-body-xl lg:ml-40"
-                  label="Find a Group"
-                  type="button"
-                  variant={BUTTON_VARIANTS.GRADIENT_1_SM}
-                />
+
+              <div className="flex justify-center md:justify-start w-full">
+                <div className="w-full sm:w-auto md:ml-0 lg:ml-96">
+                  <Button
+                    className="w-full sm:w-auto text-body-lg md:text-body-xl"
+                    label="Register Now"
+                    type="button"
+                    variant={BUTTON_VARIANTS.GRADIENT_1_SM}
+                  />
+                </div>
               </div>
             </div>
             {/* IMAGE SECTION */}
@@ -57,7 +61,7 @@ export default function Header() {
               src="/images/google-io.png"
               height={400}
               width={400}
-              alt="Google Icon"
+              alt="DevFest 2024"
               className="mx-auto w-full md:w-80 max-w-4xl"
             />
           </div>
@@ -66,11 +70,16 @@ export default function Header() {
         <hr className="absolute bottom-0 left-0 right-0 h-0.5 bg-white" />
       </div>
       {/* CARDS SECTION */}
-      <div className="bg-dark-400 py-12 md:py-20 lg:py-36 relative">
+      <div className="bg-dark-400 py-12 md:py-20 lg:py-36 relative lg:ml-24">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-6">
             {cards.map((card, index) => (
-              <Card key={index} {...card} />
+              <div
+                key={index}
+                className="w-full sm:w-96 md:w-[calc(33.333%-16px)] flex"
+              >
+                <Card {...card} />
+              </div>
             ))}
           </div>
         </div>

@@ -27,7 +27,6 @@ const config: Config = {
           400: "#B99CFC",
           500: "#7D49F8",
         },
-
         green: {
           500: "#34A853",
         },
@@ -69,32 +68,37 @@ const config: Config = {
           50: "#121212",
         },
       },
-    },
-    fontSize: {
-      "heading-xl": "60px",
-      "heading-lg": "48px",
-      "heading-md": "34px",
-      "title-xl": "24px",
-      "title-lg": "20px",
-      "body-xl": "18px",
-      "body-lg": "16px",
-      "body-md": "14px",
-      "body-sm": "12px",
-      caption: "10px",
-    },
-    screens: {
-      sm: "0px",
-      md: "768px",
-      lg: "1280px",
-      xl: "1536px",
-    },
-    boxShadow: {
-      "button-hover": "5px 5px 15px -2px rgb(0 0 0)",
-      "button-clicked": "inset 0px 10px 15px -10px rgba(0, 0, 0, 0.9)",
-      "gradient-button-default": "5px 7px 20px -4px rgb(0 0 0)",
-      none: "0px 0px 0px rbga(0,0,0,0)",
+      fontSize: {
+        "heading-xl": "60px",
+        "heading-lg": "48px",
+        "heading-md": "34px",
+        "title-xl": "24px",
+        "title-lg": "20px",
+        "body-xl": "18px",
+        "body-lg": "16px",
+        "body-md": "14px",
+        "body-sm": "12px",
+        caption: "10px",
+      },
+      screens: {
+        sm: "0px",
+        md: "768px",
+        lg: "1280px",
+        xl: "1536px",
+      },
+      boxShadow: {
+        "button-hover": "5px 5px 15px -2px rgb(0 0 0)",
+        "button-clicked": "inset 0px 10px 15px -10px rgba(0, 0, 0, 0.9)",
+        "gradient-button-default": "5px 7px 20px -4px rgb(0 0 0)",
+        "card-hover": "0 0 15px 2px rgba(255, 255, 255, 0.3)",
+        none: "0px 0px 0px rgba(0,0,0,0)",
+      },
+      animation: {
+        "spin-slow": "spin 8s linear infinite",
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
